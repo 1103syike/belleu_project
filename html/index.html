@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELLEU 比露台灣 | 專為MZ世代服務的服飾品牌</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <ul class="nav">
+            <li class="nav_button nav_logo"><a href="/">Belleu</a></li>
+            <li class="nav_button"><a href="/">熱門商品</a></li>
+            <li class="nav_button"><a href="/">最新商品</a></li>
+            <li class="nav_button"><a href="/">買一送一</a></li>
+        </ul>
+    </header>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/image/swiper-1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="/image/swiper-2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="/image/swiper-3.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="/image/swiper-4.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            cssMode: true,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            mousewheel: true,
+            keyboard: true,
+        });
+    </script>
+
+
+
+</body>
+
+</html>

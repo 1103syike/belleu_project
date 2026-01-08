@@ -1,0 +1,38 @@
+@import url("/css/reset.css");
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.30) 0%, rgba(56, 56, 56, 0.23) 49%, rgba(230, 230, 230, 0.00) 100%);
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    gap: 50px;
+    padding: 5px 60px;
+}
+
+.nav_button {
+    display: block;
+    font-size: 18px;
+    color: white;
+}
+
+.nav_logo {
+    font-family: Gaegu;
+    font-size: 40px;
+    color: white;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+body{
+    height: 200vh;
+}
