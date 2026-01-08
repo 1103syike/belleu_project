@@ -1,0 +1,12 @@
+.store {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F6F4EE;
+    padding: 60px 150px;
+}
+
+.app_logo{
+    width: 100px;
+}
+
