@@ -5,16 +5,52 @@
 }
 
 .about_belleu h2 {
+    font-size: 22px;
     color: #736B60;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
+    user-select: none;
 }
 
 .about_belleu p {
+    font-size: 16px;
     color: #736B60;
     text-align: center;
+    user-select: none;
 }
-.about_belleu p:first-of-type{
+
+.about_belleu p:first-of-type {
     margin-bottom: 10px;
+}
+
+.about_belleu p:last-of-type {
+    margin-bottom: 50px;
+}
+
+.about_belleu_gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about_belleu_gallery figure img {
+    width: 20vw;
+}
+
+.about_belleu_gallery figure {
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+
+.about_belleu_gallery figure:hover {
+    border: 2px solid #736B60;
+}
+
+.about_belleu_gallery figure figcaption {
+    color: #736B60;
+    font-size: 18px;
+    margin-top: 5px;
 }
