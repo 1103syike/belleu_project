@@ -1,5 +1,5 @@
 @import url("/css/reset.css");
-
+@import url("/css/advert_swiper.css");
 .nav {
     display: flex;
     flex-direction: row;
@@ -7,9 +7,10 @@
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.30) 0%, rgba(56, 56, 56, 0.23) 49%, rgba(230, 230, 230, 0.00) 100%);
     position: fixed;
     z-index: 99;
-    width: 100%;
-    gap: 50px;
+    width: 100vw;
+    box-sizing: border-box;
     padding: 5px 60px;
+    gap: 50px;
 }
 
 .nav_button {
@@ -24,15 +25,6 @@
     color: white;
 }
 
-.swiper {
-    width: 100%;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-}
-
-body{
-    height: 200vh;
+.nav_button:nth-last-child(2) {
+    margin-left: auto;
 }
