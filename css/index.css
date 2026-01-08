@@ -1,6 +1,22 @@
-@import url("/css/reset.css");
-@import url("/css/advert_swiper.css");
+@import url("./reset.css");
+@import url("./index_advert_swiper.css");
+@import url("./index_about_belleu.css");
+
+body {
+    width: 100%;
+}
+
+.marquee {
+    color: white;
+    background-color: #E5AAA3;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+
+}
+
 .nav {
+    height: 80px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,8 +25,8 @@
     z-index: 99;
     width: 100vw;
     box-sizing: border-box;
-    padding: 5px 60px;
     gap: 50px;
+    padding: 0px 60px;
 }
 
 .nav_button {

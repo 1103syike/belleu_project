@@ -1,0 +1,20 @@
+.about_belleu {
+    background-color: #F6F4EE;
+    padding: 100px 60px;
+    box-sizing: border-box;
+}
+
+.about_belleu h2 {
+    color: #736B60;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.about_belleu p {
+    color: #736B60;
+    text-align: center;
+}
+.about_belleu p:first-of-type{
+    margin-bottom: 10px;
+}

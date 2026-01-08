@@ -8,37 +8,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/index.css">
-    <script src="../js/swiper.js"></script>
+    <script src="../js/index_advert_swiper.js"></script>
+    <script src="../js/header.js"></script>
 </head>
 
 <body>
-    <!-- header -->
-    <header>
-        <ul class="nav">
-            <li class="nav_button nav_logo"><a href="/">Belleu</a></li>
-            <li class="nav_button"><a href="/">熱門商品</a></li>
-            <li class="nav_button"><a href="/">最新商品</a></li>
-            <li class="nav_button"><a href="/">買一送一</a></li>
-            <li class="nav_button"><a href="/">登入</a></li>
-            <li class="nav_button"><a href="/">註冊</a></li>
-        </ul>
-    </header>
+    <main>
+        <!-- marquee -->
+        <div class="marquee">下載app隨時領取最新優惠資訊!</div>
 
-    <!-- Swiper -->
-    <div class="advert_swiper">
-        <div class="advert_swiper_wrapper">
-            <img class="advert_swiper_wrapper_img" src="../image/swiper-1.png" alt="swiper-1">
-            <img class="advert_swiper_wrapper_img" src="../image/swiper-2.png" alt="swiper-2">
-            <img class="advert_swiper_wrapper_img" src="../image/swiper-3.png" alt="swiper-3">
-            <img class="advert_swiper_wrapper_img" src="../image/swiper-4.png" alt="swiper-4">
-        </div>
-        <div class="advert_swiper_button advert_swiper_button_next">＞</div>
-        <div class="advert_swiper_button advert_swiper_button_prev">＜</div>
-        <!-- <div class="advert_swiper-pagination"></div> -->
-    </div>
+        <!-- header -->
+        <header>
+            <ul class="nav">
+                <li class="nav_button nav_logo"><a href="">Belleu</a></li>
+                <li class="nav_button"><a href="">熱門商品</a></li>
+                <li class="nav_button"><a href="">最新商品</a></li>
+                <li class="nav_button"><a href="">買一送一</a></li>
+                <li class="nav_button"><a href="">所有商品</a></li>
+                <li class="nav_button"><a href="">登入</a></li>
+                <li class="nav_button"><a href="">註冊</a></li>
+            </ul>
+        </header>
 
+        <!-- Swiper -->
+        <section class="advert_swiper">
+            <div class="advert_swiper_wrapper">
+                <div class="advert_swiper_wrapper_mask"></div>
+                <img class="advert_swiper_wrapper_img" src="../image/swiper-1.png" alt="swiper-1">
+                <img class="advert_swiper_wrapper_img" src="../image/swiper-2.png" alt="swiper-2">
+                <img class="advert_swiper_wrapper_img" src="../image/swiper-3.png" alt="swiper-3">
+                <img class="advert_swiper_wrapper_img" src="../image/swiper-4.png" alt="swiper-4">
+            </div>
+            <button class="advert_swiper_button advert_swiper_button_next">▶</button>
+            <button class="advert_swiper_button advert_swiper_button_prev">◀</button>
+            <div class="advert_swiper_paginations"></div>
+        </section>
+
+        <section class="about_belleu">
+            <h2>什麼是 Belleu？</h2>
+            <p>我們希望成為螢幕彼岸的你，最溫暖的購物夥伴。</p>
+            <p>從日常需求的時尚單品，到讓您在重要時刻閃耀的精緻服裝，我們都將陪伴在你的身旁。</p>
+
+            <div class="about_belleu_gallery">
+                <figure>
+                    <img src="">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </section>
+
+    </main>
 </body>
 
 </html>

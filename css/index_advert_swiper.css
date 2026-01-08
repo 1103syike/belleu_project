@@ -1,0 +1,79 @@
+.advert_swiper {
+    position: relative;
+    overflow: hidden;
+}
+
+.advert_swiper_wrapper {
+    display: flex;
+    transform : translateX(-100vw);
+    flex-direction: row;
+    background-color: black;
+}
+
+.advert_swiper_wrapper_img {
+    user-select: none;
+    width: 100vw;
+    transition: transform.4s ease;
+    z-index: 2;
+}
+
+.advert_swiper_button {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    color: whitesmoke;
+    /* 點擊 */
+    cursor: pointer;
+    /* 不可反白 */
+    user-select: none;
+    z-index: 3;
+    border: none;
+    background:none;
+}
+
+.advert_swiper_button:hover{
+    color: red;
+}
+
+.advert_swiper_button_next {
+    right: 2%;
+}
+
+.advert_swiper_button_prev {
+    left: 2%;
+}
+
+
+.advert_swiper_wrapper_mask{
+    position: absolute;
+    top: 0;
+    background-color:black;
+    left: 100vw;
+    width: 100vw;
+    height: 100%;
+    opacity: 60%;
+    z-index: 1;
+}
+.advert_swiper_paginations{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    bottom: 3%;
+    left: 50%;
+    transform : translateX(-100%);
+}
+
+.advert_swiper_paginations_pagination{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 90%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.advert_swiper_paginations_pagination:hover{
+    background-color: #fff;
+}
