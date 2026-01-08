@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const next = document.getElementsByClassName('advert_swiper_button_next')[0];
     const prev = document.getElementsByClassName('advert_swiper_button_prev')[0];
     const mask = document.getElementsByClassName('advert_swiper_wrapper_mask')[0];
-    // const paginations = document.getElementsByClassName('advert_swiper_paginations')[0];
 
     next.addEventListener('click', () => {
         nextSwiper();
@@ -62,18 +61,4 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     startAutoPlay();
-
-    // for (let i = 0; i < images.length; i++) {
-    //     const pagination = document.createElement("div");
-    //     paginations.appendChild(pagination);
-    //     pagination.classList.add('advert_swiper_paginations_pagination')
-    // }
-
-    // const paginationsForUse = document.getElementsByClassName("advert_swiper_paginations_pagination");
-    // paginationsForUse[0].addEventListener('click', () => {
-    //     alert("一號被點了")
-    //     startAutoPlay();
-    // })
-    // console.log(paginationsForUse)
-
 });

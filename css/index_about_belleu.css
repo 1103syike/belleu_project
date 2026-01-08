@@ -1,10 +1,10 @@
 .about_belleu {
     background-color: #F6F4EE;
-    padding: 100px 60px;
+    padding: 100px 10vw;
     box-sizing: border-box;
 }
 
-.about_belleu h2 {
+.about_belleu h1 {
     font-size: 22px;
     color: #736B60;
     font-weight: bold;
@@ -31,12 +31,12 @@
 .about_belleu_gallery {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+
 }
 
 .about_belleu_gallery figure img {
-    width: 20vw;
+    width: 19vw;
 }
 
 .about_belleu_gallery figure {
