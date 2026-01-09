@@ -1,0 +1,47 @@
+header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.30) 0%, rgba(56, 56, 56, 0.23) 49%, rgba(230, 230, 230, 0.00) 100%);
+    width: 100vw;
+    z-index: 99;
+    position: fixed;
+
+}
+
+.nav {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 50px;
+    padding: 0px 60px;
+}
+
+.nav_button {
+    display: block;
+    font-size: 18px;
+    color: white;
+}
+
+.nav_logo {
+    font-family: Gaegu;
+    font-size: 40px;
+    color: white;
+}
+
+.nav_button:nth-last-child(2) {
+    margin-left: auto;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    background: none;
+    background-color: #F6F4EE;
+    border-bottom: 1px solid #999;
+}
+
+.sticky .nav_button {
+    color: #4B4237;
+}
