@@ -26,6 +26,7 @@ header {
     font-family: Gaegu;
     font-size: 40px;
     color: white;
+    user-select: none;
 }
 
 .nav_button:nth-last-child(2) {

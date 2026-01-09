@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
         start = (page - 1) * per;
         pageData = products.slice(start, start + per);
         product_list.innerHTML = pageData.map(p => `
-            <li class="product_card">
-                <a class="product_card_link" href="${p.link}">
-                    <img class="product_card_img_original" src='../image/product_card_img(${p.id}-2).png'>
-                    <img class="product_card_img_hover" src='../image/product_card_img(${p.id}-1).png'>
+            <li class="product_card" data-id="${p.id}">
+                <a class="product_card_link" href="product.html">
+                    <img class="product_card_img_original" src='../image/products/product_card_img(${p.id}-2).png'>
+                    <img class="product_card_img_hover" src='../image/products/product_card_img(${p.id}-1).png'>
                     <div class="product_card_img_mask"></div>
                     <p class="product_card_decorate">現在購買</p>
                     <p class="product_card_name">${p.name}</p>
@@ -47,6 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 </a>
             </li>
         `).join('');
+
+        const productCards = document.getElementsByClassName('product_card')
+        for (let i = 0; i < productCards.length; i++) {
+            productCards[i].addEventListener('click', () => {
+                localStorage.setItem("product_id", productCards[i].dataset.id);
+            })
+        }
+
         if (pageData.length < 12) {
             console.log('僅有', pageData.length, '筆')
             for (let i = 0; i < 12 - pageData.length; i++) {
@@ -54,10 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 product_list.appendChild(empty);
                 empty.style.width = '230px';
                 empty.style.height = '292px';
+                empty.style.userSelect = 'none';
 
             }
         }
     }
+
 
     const pageNumber = Math.ceil(products.length / per)
     const pagination_placer = document.getElementsByClassName('product_recommend_list_pagination_placer')[0]
