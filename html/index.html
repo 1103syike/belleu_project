@@ -7,167 +7,116 @@
     <title>BELLEU 比露台灣 | 專為MZ世代服務的服飾品牌</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/pages/index.css">
     <script src="../js/pages/index/product_recommend.js"></script>
-    <script src="../js/pages/index/advert_swiper.js"></script>
+    <script src="../js/pages/index/swiper.js"></script>
     <script src="../js/components/header.js"></script>
+    <script src="../js/components/footer.js"></script>
 </head>
 
 <body>
-    <main>
-        <!-- marquee -->
-        <div class="marquee">下載app隨時領取最新優惠資訊!</div>
+    <!-- marquee -->
+    <div class="marquee">下載app隨時領取最新優惠資訊!</div>
 
-        <!-- header -->
-        <header>
-            <ul class="nav">
-                <li class="nav_button nav_logo"><a href="">Belleu</a></li>
-                <li class="nav_button"><a href="">熱門商品</a></li>
-                <li class="nav_button"><a href="">最新商品</a></li>
-                <li class="nav_button"><a href="">買一送一</a></li>
-                <li class="nav_button"><a href="">所有商品</a></li>
-                <li class="nav_button"><a href="">登入</a></li>
-                <li class="nav_button"><a href="">註冊</a></li>
-            </ul>
-        </header>
+    <!-- Swiper -->
+    <section class="swiper swiper--hero">
+        <div class="swiper_track">
+            <!-- <div class="swiper_mask"></div> -->
+            <img class="swiper_img currentIndex">
+            <img class="swiper_img prevIndex">
+            <img class="swiper_img nextIndex">
+        </div>
+        <button class="swiper_btn swiper_btn--next">▶</button>
+        <button class="swiper_btn swiper_btn--prev">◀</button>
+        <div class="swiper_pagination"></div>
+    </section>
 
-        <!-- Swiper -->
-        <section class="advert_swiper">
-            <div class="advert_swiper_wrapper">
-                <div class="advert_swiper_wrapper_mask"></div>
-                <img class="advert_swiper_wrapper_img" src="../image/page/index/swiper/swiper(1).png" alt="swiper-1">
-                <img class="advert_swiper_wrapper_img" src="../image/page/index/swiper/swiper(2).png" alt="swiper-2">
-                <img class="advert_swiper_wrapper_img" src="../image/page/index/swiper/swiper(3).png" alt="swiper-3">
-                <img class="advert_swiper_wrapper_img" src="../image/page/index/swiper/swiper(4).png" alt="swiper-4">
-            </div>
-            <button class="advert_swiper_button advert_swiper_button_next">▶</button>
-            <button class="advert_swiper_button advert_swiper_button_prev">◀</button>
-            <div class="advert_swiper_paginations"></div>
-        </section>
+    <!-- 關於比露 -->
+    <section class="about_belleu">
+        <h1>什麼是 Belleu？</h1>
+        <p>我們希望成為螢幕彼岸的你，最溫暖的購物夥伴。</p>
+        <p>從日常需求的時尚單品，到讓您在重要時刻閃耀的精緻服裝，我們都將陪伴在你的身旁。</p>
 
-        <!-- 關於比露 -->
-        <section class="about_belleu">
-            <h1>什麼是 Belleu？</h1>
-            <p>我們希望成為螢幕彼岸的你，最溫暖的購物夥伴。</p>
-            <p>從日常需求的時尚單品，到讓您在重要時刻閃耀的精緻服裝，我們都將陪伴在你的身旁。</p>
+        <div class="about_belleu_gallery">
+            <figure>
+                <img src="../image/page/index/gallery/gallery(1).png">
+                <figcaption>因為好看所以1+1🖤</figcaption>
+            </figure>
 
-            <div class="about_belleu_gallery">
-                <figure>
-                    <img src="../image/page/index/gallery/gallery(1).png">
-                    <figcaption>因為好看所以1+1🖤</figcaption>
-                </figure>
+            <figure>
+                <img src="../image/page/index/gallery/gallery(2).png">
+                <figcaption>今天9點前下單'明天就到'💙</figcaption>
+            </figure>
 
-                <figure>
-                    <img src="../image/page/index/gallery/gallery(2).png">
-                    <figcaption>今天9點前下單'明天就到'💙</figcaption>
-                </figure>
+            <figure>
+                <img src="../image/page/index/gallery/gallery(3).png">
+                <figcaption>這次讓我們陪你過夏天💚</figcaption>
+            </figure>
 
-                <figure>
-                    <img src="../image/page/index/gallery/gallery(3).png">
-                    <figcaption>這次讓我們陪你過夏天💚</figcaption>
-                </figure>
+            <figure>
+                <img src="../image/page/index/gallery/gallery(4).png">
+                <figcaption>'自拍活動'進行中 📷</figcaption>
+            </figure>
+        </div>
 
-                <figure>
-                    <img src="../image/page/index/gallery/gallery(4).png">
-                    <figcaption>'自拍活動'進行中 📷</figcaption>
-                </figure>
-            </div>
+    </section>
 
-        </section>
+    <section class="product_recommend">
+        <h2 class="product_recommend_title">Belleu比露為您推薦</h2>
+        <p class="product_recommend_intro">您的尺寸之中最熱門的商品！⛱️</p>
+        <ul class="product_recommend_list">
+            <li class="product_card">
 
-        <section class="product_recommend">
-            <h2 class="product_recommend_title">Belleu比露為您推薦</h2>
-            <p class="product_recommend_intro">您的尺寸之中最熱門的商品！⛱️</p>
-            <ul class="product_recommend_list">
-                <li class="product_card">
+            </li>
+        </ul>
+        <div class="product_recommend_list_pagination">
+            <button
+                class="product_recommend_list_pagination_button product_recommend_list_pagination_button_prev">«</button>
+            <div class="product_recommend_list_pagination_placer"></div>
+            <button
+                class="product_recommend_list_pagination_button product_recommend_list_pagination_button_next">»</button>
+        </div>
 
+    </section>
+
+    <section class="store">
+        <div class="store_info">
+            <h2 class="store_info_title">品牌資訊</h2>
+            <ul class="store_info_datas">
+                <li class="store_info_data"><strong class="store_info_data_strong">店家名稱：</strong>BELLEU 比露時尚潮流服飾
+                </li>
+                <li class="store_info_data"><strong class="store_info_data_strong">地址：</strong>新北市板橋區歐嗨喲路117號4樓（板橋大遠百4樓）
+                </li>
+                <li class="store_info_data"><strong class="store_info_data_strong">連絡電話：</strong>(TID)102-11-8939
+                </li>
+                <li class="store_info_data"><strong class="store_info_data_strong">營業時間（平日）：</strong>13:00–22:00
+                </li>
+                <li class="store_info_data"><strong class="store_info_data_strong">營業時間（例假日）：</strong>10:00–24:00
                 </li>
             </ul>
-            <div class="product_recommend_list_pagination">
-                <button
-                    class="product_recommend_list_pagination_button product_recommend_list_pagination_button_prev">«</button>
-                <div class="product_recommend_list_pagination_placer"></div>
-                <button
-                    class="product_recommend_list_pagination_button product_recommend_list_pagination_button_next">»</button>
-            </div>
+            <h3 class="store_info_subtitle">下載BELLEU官方APP</h3>
+            <div class="store_info_app">
+                <img class="store_info_app_logo" src="../image/components/app_logo.png" alt="app_logo">
 
-        </section>
-
-        <section class="store">
-            <div class="store_info">
-                <h2 class="store_info_title">品牌資訊</h2>
-                <ul class="store_info_datas">
-                    <li class="store_info_data"><strong class="store_info_data_strong">店家名稱：</strong>BELLEU 比露時尚潮流服飾
+                <ul class="store_info_app_downloads">
+                    <li class="store_info_app_download"><strong><i class="fa-brands fa-google"></i></strong>Download
                     </li>
-                    <li class="store_info_data"><strong
-                            class="store_info_data_strong">地址：</strong>新北市板橋區歐嗨喲路117號4樓（板橋大遠百4樓）</li>
-                    <li class="store_info_data"><strong class="store_info_data_strong">連絡電話：</strong>(TID)102-11-8939
-                    </li>
-                    <li class="store_info_data"><strong class="store_info_data_strong">營業時間（平日）：</strong>13:00–22:00
-                    </li>
-                    <li class="store_info_data"><strong class="store_info_data_strong">營業時間（例假日）：</strong>10:00–24:00
+                    <li class="store_info_app_download"><strong><i class="fa-brands fa-apple"></i></strong>Download
                     </li>
                 </ul>
-                <h3 class="store_info_subtitle">下載BELLEU官方APP</h3>
-                <div class="store_info_app">
-                    <img class="store_info_app_logo" src="../image/components/app_logo.png" alt="app_logo">
-
-                    <ul class="store_info_app_downloads">
-                        <li class="store_info_app_download"><strong><i class="fa-brands fa-google"></i></strong>Download
-                        </li>
-                        <li class="store_info_app_download"><strong><i class="fa-brands fa-apple"></i></strong>Download
-                        </li>
-                    </ul>
-                </div>
             </div>
-            <div class="store_map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.589378721624!2d121.46733320000001!3d25.0140651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a81eef069bf7%3A0xcd9504020d005103!2z5p2_5qmL5aSn6YGg55m-!5e0!3m2!1szh-TW!2stw!4v1767893430239!5m2!1szh-TW!2stw"
-                    width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="footer_body">
-                <div class="footer_left">
-                    <nav class="footer_left_nav">
-                        <a href="#" class="footer_left_nav_button">關於比露</a>
-                        <a href="#" class="footer_left_nav_button">會員福利</a>
-                        <a href="#" class="footer_left_nav_button">使用條款</a>
-                        <a href="#" class="footer_left_nav_button">隱私權政策</a>
-                        <a href="#" class="footer_left_nav_button">門市資訊</a>
-                    </nav>
-                    <div class="footer_left_about">
-                        <p class="footer_left_about_title"><strong
-                                class="footer_left_about_title_strong">BELLEU</strong>比露時尚服飾有限公司</p>
-                    </div>
-                </div>
-                <div class="footer_right">
-                    <p class="footer_right_info"><strong class="footer_right_info_strong">客服中心：</strong>(TID)102-11-8939
-                    </p>
-                    <p class="footer_right_info"><strong
-                            class="footer_right_info_strong">電子郵件：</strong>service@belleu.com.tw</p>
-                    <p class="footer_right_info"><strong class="footer_right_info_strong">平日（週一至週五）</strong>13:00-22:00
-                    </p>
-                    <p class="footer_right_info"><strong
-                            class="footer_right_info_strong">例假日（週六、週日及國定假日）</strong>10:00-24:00</p>
-                </div>
-            </div>
-
-            <div class="footer_bottom">
-                <p class="footer_bottom_data"><strong class="footer_bottom_data_strong">負責人</strong>鄭丞恩</p>
-                <p class="footer_bottom_data"><strong class="footer_bottom_data_strong">地址</strong>新北市板橋區歐嗨喲路102街11號</p>
-                <p class="footer_bottom_data"><strong class="footer_bottom_data_strong">統編</strong>102118939</p>
-                <p class="footer_bottom_data">本網站僅供網站設計學習用途 如有侵權請聯絡<strong
-                        class="footer_bottom_data_strong">ping355168@gmail.com</strong></p>
-            </div>
-        </footer>
-    </main>
+        </div>
+        <!-- <div class="store_map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.589378721624!2d121.46733320000001!3d25.0140651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a81eef069bf7%3A0xcd9504020d005103!2z5p2_5qmL5aSn6YGg55m-!5e0!3m2!1szh-TW!2stw!4v1767893430239!5m2!1szh-TW!2stw"
+                width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div> -->
+    </section>
 </body>
 
 </html>

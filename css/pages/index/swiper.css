@@ -1,0 +1,70 @@
+.swiper--hero {
+    position: relative;
+}
+
+.swiper--hero .swiper_track {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    overflow: hidden;
+}
+
+.swiper--hero .swiper_img {
+    width: 100%;
+    transition: transform 0.4s ease;
+
+}
+
+.swiper--hero .prevIndex,
+.swiper--hero .nextIndex {
+    position: absolute;
+}
+
+
+
+.swiper--hero .prevIndex {
+    transform: translateX(-100%);
+}
+
+.swiper--hero .nextIndex {
+    transform: translateX(100%);
+}
+
+.swiper--hero .swiper_btn {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: whitesmoke;
+    /* 點擊 */
+    cursor: pointer;
+    /* 不可反白 */
+    user-select: none;
+    z-index: 3;
+    border: none;
+    background: none;
+}
+
+.swiper--hero .swiper_btn:hover {
+    color: red;
+}
+
+.swiper--hero .swiper_btn--next {
+    right: 2%;
+}
+
+.swiper--hero .swiper_btn--prev {
+    left: 2%;
+}
+
+
+.swiper--hero .swiper_mask {
+    position: absolute;
+    top: 0;
+    background-color: black;
+    left: 100vw;
+    width: 100vw;
+    height: 100%;
+    opacity: 60%;
+    z-index: 1;
+}

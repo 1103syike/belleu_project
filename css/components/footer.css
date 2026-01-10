@@ -19,26 +19,26 @@
     gap: 80px;
 }
 
-.footer_left_nav {
+.footer .nav {
     display: flex;
     flex-direction: row;
     gap: 50px;
 }
 
-.footer_left_nav_button {
+.footer .nav_link {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-.footer_left_about {
+.footer .about {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.footer_left_about_title {
+.footer .about_title {
     display: flex;
     flex-direction: row;
     color: white;
@@ -48,7 +48,7 @@
     font-weight: 500;
 }
 
-.footer_left_about_title_strong {
+.footer .brand {
     font-size: 36px;
     font-family: gaegu;
     font-weight: normal;
@@ -60,15 +60,11 @@
     gap: 20px;
 }
 
-.footer_bottom_data {
+.footer .item {
     color: white;
     font-size: 16px;
 }
 
-.footer_bottom_data_strong {
-    margin-right: 10px;
-    font-weight: bold;
-}
 
 .footer_right {
     display: flex;
@@ -76,15 +72,20 @@
     gap: 8px;
 }
 
-.footer_right_info {
+.footer .info {
     color: white;
     font-size: 18px;
 }
 
-.footer_right_info_strong {
+.footer .label {
     font-weight: 500;
 }
 
-.footer_right_info:nth-child(2) {
+.footer .info:nth-child(2) {
     margin-bottom: 10px;
+}
+
+.footer_bottom .label {
+    margin-right: 10px;
+    font-weight: 500;
 }

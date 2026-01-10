@@ -3,3 +3,17 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.noto-sans-tc {
+  font-family: "Noto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}

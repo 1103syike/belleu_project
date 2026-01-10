@@ -1,6 +1,6 @@
 @import url("../base/reset.css");
 @import url("../base/style.css");
-@import url("../pages/index/advert_swiper.css");
+@import url("../pages/index/swiper.css");
 @import url("../pages/index/about_belleu.css");
 @import url("../pages/index/product_recommend.css");
 @import url("../pages/index/store.css");
@@ -8,6 +8,7 @@
 @import url("../components/footer.css");
 
 .marquee {
+    order: -2;
     color: white;
     background-color: #E5AAA3;
     font-size: 16px;

@@ -3,3 +3,7 @@
 @import url("../components/header(2).css");
 @import url("../pages/product/product_intro.css");
 @import url("../components/footer.css");
+
+.header_block{
+    height: 80px;
+}

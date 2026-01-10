@@ -1,12 +1,14 @@
-header {
+.header {
+    order: -1;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.30) 0%, rgba(56, 56, 56, 0.23) 49%, rgba(230, 230, 230, 0.00) 100%);
-    width: 100vw;
+    width: 100%;
     z-index: 99;
     position: fixed;
+    top: 36px;
 
 }
 
-.nav {
+.header .nav {
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -16,20 +18,20 @@ header {
     padding: 0px 60px;
 }
 
-.nav_button {
+.header .nav_link {
     display: block;
     font-size: 18px;
     color: white;
 }
 
-.nav_logo {
-    font-family: Gaegu;
+.header .nav_logo {
+    font-family: gaegu;
     font-size: 40px;
     color: white;
     user-select: none;
 }
 
-.nav_button:nth-last-child(2) {
+.header .nav_item:nth-last-child(2) {
     margin-left: auto;
 }
 
@@ -43,6 +45,6 @@ header {
     border-bottom: 1px solid #999;
 }
 
-.sticky .nav_button {
+.sticky .nav_link {
     color: #4B4237;
 }
