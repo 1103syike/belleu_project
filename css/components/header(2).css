@@ -1,14 +1,13 @@
-header {
+.header {
     background: none;
     background-color: #F6F4EE;
     border-bottom: 1px solid #999;
     width: 100%;
     z-index: 99;
     position: fixed;
-
 }
 
-.nav {
+.header .nav {
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -17,22 +16,21 @@ header {
     gap: 50px;
     padding: 0px 60px;
     user-select: none;
-    
 }
 
-.nav_button {
+.header .nav_link {
     display: block;
     font-size: 18px;
     color: #4B4237;
 }
 
-.nav_logo {
+.header .nav_logo {
     font-family: Gaegu;
     font-size: 40px;
     color: #4B4237;
 }
 
-.nav_button:nth-last-child(2) {
+.header .nav_item:nth-last-child(2) {
     margin-left: auto;
 }
 

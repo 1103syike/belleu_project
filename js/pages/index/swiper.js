@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const track = document.getElementsByClassName('swiper_track')[0];
 
     const slides = [
         { id: 1, name: '輪播圖-1', src: '../image/page/index/swiper/swiper(1).png' },
@@ -11,11 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSlideNumber = 0
     let nextSlideNumber = 1
     let prevSlideNumber = 3
-
-    // 設定當前、上張、下張投影片的號碼，預設。
-    // let currentSlideObject = slides[0]; //  第一張
-    // let prevSlideObject = slides[3];    //  第四張
-    // let nextSlideObject = slides[1];    //  第二張
 
     // 捕捉元件的容器。
     const currentSlide = document.getElementsByClassName("currentIndex")[0];
@@ -36,16 +30,25 @@ document.addEventListener('DOMContentLoaded', function () {
         imgSetting()
         SlideNumberPlusOne()
         slideNext()
-        currentImgSetting()
+        startAutoPlay()
+        renewActiveDot()
+        disabledAddDots()
+        setTimeout(() => {
+            currentImgSetting()
+        }, 400);
     })
     prev_btn.addEventListener('click', () => {
         imgSetting()
         SlideNumberMinusOne()
         slidePrev()
-        currentImgSetting()
+        startAutoPlay()
+        renewActiveDot()
+        disabledAddDots()
+        setTimeout(() => {
+            currentImgSetting()
+        }, 400);
     })
 
-    // 
     function SlideNumberPlusOne() {
         const len = slides.length
         currentSlideNumber = (currentSlideNumber + 1) % len
@@ -60,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         nextSlideNumber = (currentSlideNumber + 1) % len
     }
 
-
     // 放置圖片
 
     function imgSetting() {
@@ -69,104 +71,113 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function currentImgSetting() {
-        setTimeout(() => {
-            currentSlide.src = slides[currentSlideNumber].src;
-        }, 400);
+        currentSlide.src = slides[currentSlideNumber].src;
     }
-    
+
+    const mask = document.getElementsByClassName('swiper_mask')[0];
+
     // nextSlide滑動特效
     function slideNext() {
         nextSlide.style.transform = 'translateX(0)';
         nextSlide.style.transition = 'transform 0.4s ease';
+        next_btn.disabled = true;
+        prev_btn.disabled = true;
+        mask.style.display = "block";
         setTimeout(() => {
             nextSlide.style.transition = 'none';
             nextSlide.style.transform = 'translateX(100%)';
+            next_btn.disabled = false;
+            prev_btn.disabled = false;
+            mask.style.display = "none";
         }, 400);
     }
 
     function slidePrev() {
         prevSlide.style.transform = 'translateX(0)';
         prevSlide.style.transition = 'transform 0.4s ease';
+        next_btn.disabled = true;
+        prev_btn.disabled = true;
+        mask.style.display = "block";
         setTimeout(() => {
             prevSlide.style.transition = 'none';
             prevSlide.style.transform = 'translateX(-100%)';
+            next_btn.disabled = false;
+            prev_btn.disabled = false;
+            mask.style.display = "none";
         }, 400);
     }
 
-    // function SlideNumberPlusOne() {
-    //     nextSlideNumber = currentSlideNumber + 1;
-    //     prevSlideNumber = currentSlideNumber - 1;
-    //     console.log('當前投影片是第', currentSlideNumber + 1, '張')
-    //     console.log('上張投影片是第', prevSlideNumber + 1, '張')
-    //     console.log('下張投影片是第', nextSlideNumber + 1, '張')
-    // }
+    let autoPlayer = null;
 
-    // const footer = document.createElement("footer")
-    // footer.className = 'footer'
-    // footer.innerHTML = ``
-    // track.body.appendChild(footer)
+    function startAutoPlay() {
+        clearTimeout(autoPlayer);
+        autoPlayer = setTimeout(() => {
+            slideNext();
+            imgSetting()
+            startAutoPlay();
+            SlideNumberPlusOne()
+            renewActiveDot()
+            disabledAddDots()
+            setTimeout(() => {
+                currentImgSetting()
+            }, 400);
+        }, 5000);
+    };
 
+    startAutoPlay();
 
+    const swiper_pagination = document.getElementsByClassName('swiper_pagination')[0];
+    const swiper_dot = document.createElement('button');
+    swiper_dot.className = 'swiper_dot'
+    swiper_pagination.appendChild(swiper_dot)
+    swiper_pagination.innerHTML = slides.map(p => `
+            <button class="swiper_dot" id="swiper_dot_${p.id}"></button>
+        `).join('');
 
+    const swiper_dots = document.getElementsByClassName('swiper_dot');
 
-    // const images = document.getElementsByClassName('swiper_img');
+    function renewActiveDot() {
+        for (let i = 0; i < slides.length; i++) {
+            swiper_dots[i].classList.remove('swiper_dot--active')
+        }
+        swiper_dots[currentSlideNumber].classList.add('swiper_dot--active')
+    }
 
-    const mask = document.getElementsByClassName('swiper_mask')[0];
+    function disabledAddDots() {
+        for (let i = 0; i < slides.length; i++) {
+            swiper_dots[i].disabled = true
+        }
+        setTimeout(() => {
+            for (let i = 0; i < slides.length; i++) {
+                swiper_dots[i].disabled = false
+                swiper_dots[currentSlideNumber].disabled = true
+            }
+        }, 400);
+    }
+    renewActiveDot()
 
-    // next.addEventListener('click', () => {
-    //     nextSwiper();
-    //     startAutoPlay();
-    // })
-
-    // prev.addEventListener('click', () => {
-    //     prevSwiper();
-    //     startAutoPlay();
-    // })
-
-
-    // // 進入下一張
-    // function nextSwiper() {
-    //     mask.style.zIndex = '3';
-    //     images[2].style.transform = 'translateX(-100vw)';
-    //     images[2].style.zIndex = '4';
-    //     next.disabled = true;
-    //     prev.disabled = true;
-    //     setTimeout(() => {
-    //         wrapper.append(images[1], images[2], images[3], images[0])
-    //         images[1].style.transform = 'translateX(0vw)';
-    //         images[1].style.zIndex = '2';
-    //         mask.style.zIndex = '1';
-    //         next.disabled = false;
-    //         prev.disabled = false;
-    //     }, 400);
-    // }
-
-    // // 返回上一張
-    // function prevSwiper() {
-    //     mask.style.zIndex = '3';
-    //     images[0].style.zIndex = '4';
-    //     images[0].style.transform = 'translateX(100vw)';
-    //     prev.disabled = true;
-
-    //     setTimeout(() => {
-    //         wrapper.append(images[3], images[0], images[1], images[2]);
-    //         images[1].style.transform = 'translateX(0vw)';
-    //         images[1].style.zIndex = '2';
-    //         mask.style.zIndex = '1';
-    //         prev.disabled = false;
-    //     }, 400);
-    // }
-
-
-    // let autoPlayer = null;
-
-    // function startAutoPlay() {
-    //     clearTimeout(autoPlayer);
-    //     autoPlayer = setTimeout(() => {
-    //         nextSwiper();
-    //         startAutoPlay();
-    //     }, 5000);
-    // };
-
-    // startAutoPlay();
+    for (let i = 0; i < slides.length; i++) {
+        swiper_dots[i].addEventListener('click', () => {
+            let len = slides.length
+            // currentSlideNumber = i
+            // prevSlideNumber = (i - 1 + len) % len
+            nextSlideNumber = i
+            imgSetting()
+            slideNext()
+            startAutoPlay()
+            currentSlideNumber = i
+            prevSlideNumber = (i - 1 + len) % len
+            nextSlideNumber = (i + 1) % len
+            renewActiveDot()
+            disabledAddDots()
+            for (let i = 0; i < slides.length; i++) {
+                swiper_dots[i].classList.remove('swiper_dot--active')
+            }
+            setTimeout(() => {
+                currentImgSetting()
+                console.log('改圖')
+            }, 400);
+        }
+        )
+    }
 });
