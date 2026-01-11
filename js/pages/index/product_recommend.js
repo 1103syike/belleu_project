@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 14, name: '服飾-14', price: '599元', discount: '65%' },
     ];
 
-    const product_list = document.getElementsByClassName('product_recommend_list')[0]
+    const product_list = document.getElementsByClassName('recommend__list')[0]
 
     // 一頁最多12筆
     const per = 12;
@@ -33,22 +33,23 @@ document.addEventListener('DOMContentLoaded', function () {
         start = (page - 1) * per;
         pageData = products.slice(start, start + per);
         product_list.innerHTML = pageData.map(p => `
-            <li class="product_card" data-id="${p.id}">
-                <a class="product_card_link" href="product.html">
-                    <img class="product_card_img_original" src='../image/products/product_card_img(${p.id}-2).png'>
-                    <img class="product_card_img_hover" src='../image/products/product_card_img(${p.id}-1).png'>
-                    <div class="product_card_img_mask"></div>
-                    <p class="product_card_decorate">現在購買</p>
-                    <p class="product_card_name">${p.name}</p>
-                    <p class="product_card_price">
-                        <span class="product_card_price_discount">${p.discount}</span>
-                        <span class="product_card_price_price">${p.price}</span>
+            <li class="product-card " data-id="${p.id}">
+                <a class="product-card__link" href="product.html">
+                    <img class="product-card__img product-card__img--front" src='../image/products/product_card_img(${p.id}-2).png'>
+                    <img class="product-card__img product-card__img--back" src='../image/products/product_card_img(${p.id}-1).png'>
+
+                    <div class="product-card__mask"></div>
+                    <p class="product-card__cta">現在購買</p>
+                    <p class="product-card__name">${p.name}</p>
+                    <p class="product-card__price">
+                        <span class="product-card__discount">${p.discount}</span>
+                        <span class="product-card__amount">${p.price}</span>
                     </p>
                 </a>
             </li>
         `).join('');
 
-        const productCards = document.getElementsByClassName('product_card')
+        const productCards = document.getElementsByClassName('product-card')
         for (let i = 0; i < productCards.length; i++) {
             productCards[i].addEventListener('click', () => {
                 localStorage.setItem("product_id", productCards[i].dataset.id);
@@ -70,19 +71,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const pageNumber = Math.ceil(products.length / per)
-    const pagination_placer = document.getElementsByClassName('product_recommend_list_pagination_placer')[0]
+    const pagination_placer = document.getElementsByClassName('recommend__dots')[0]
 
     for (let i = 0; i < pageNumber; i++) {
         const pagination = document.createElement("div");
         pagination.innerHTML = i + 1;
         pagination_placer.appendChild(pagination);
-        pagination.classList.add('pagination_style')
+        pagination.classList.add('recommend__dot')
     }
 
 
     listProduct()
-    const pagination = document.getElementsByClassName("pagination_style");
-    pagination[page - 1].classList.add('active')
+    const pagination = document.getElementsByClassName("recommend__dot");
+    pagination[page - 1].classList.add('recommend__dot--active')
 
     for (let i = 0; i < pagination.length; i++) {
         pagination[i].addEventListener('click', () => {
@@ -94,20 +95,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renewClass() {
         for (let i = 0; i < pageNumber; i++) {
-            pagination[i].classList.remove('active')
+            pagination[i].classList.remove('recommend__dot--active')
         }
-        pagination[page - 1].classList.add('active')
+        pagination[page - 1].classList.add('recommend__dot--active')
         listProduct();
     }
 
-    const prev = document.getElementsByClassName('product_recommend_list_pagination_button_prev')[0]
+    const prev = document.getElementsByClassName('recommend__btn--prev')[0]
     prev.addEventListener('click', () => {
         if (page > 1) {
             page--;
             renewClass()
         }
     });
-    const next = document.getElementsByClassName('product_recommend_list_pagination_button_next')[0]
+    const next = document.getElementsByClassName('recommend__btn--next')[0]
 
     next.addEventListener('click', () => {
         if (page < pageNumber) {

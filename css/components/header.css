@@ -7,7 +7,7 @@
     top: 36px;
 }
 
-.header .nav {
+.header .nav__list {
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -17,20 +17,20 @@
     padding: 0px 60px;
 }
 
-.header .nav_link {
+.header .nav__link {
     display: block;
     font-size: 18px;
     color: white;
 }
 
-.header .nav_logo {
+.header .nav__link--logo {
     font-family: gaegu;
     font-size: 40px;
     color: white;
     user-select: none;
 }
 
-.header .nav_item:nth-last-child(2) {
+.header .nav__item:nth-last-child(2) {
     margin-left: auto;
 }
 
@@ -44,6 +44,6 @@
     border-bottom: 1px solid #999;
 }
 
-.sticky .nav_link {
+.sticky .nav__link {
     color: #4B4237;
 }

@@ -18,104 +18,99 @@
     <script src="../js/components/footer.js"></script>
 </head>
 
-<body>
+<body data-header="index">
     <!-- marquee -->
     <div class="marquee">下載app隨時領取最新優惠資訊!</div>
 
     <!-- Swiper -->
     <section class="swiper swiper--hero">
-        <div class="swiper_track">
-            <img class="swiper_img currentIndex">
-            <div class="swiper_mask"></div>
-            <img class="swiper_img prevIndex">
-            <img class="swiper_img nextIndex">
+        <div class="swiper__track">
+            <img class="swiper__img swiper__img--current" src="../image/page/index/swiper/swiper(1).png">
+            <div class="swiper__mask"></div>
+            <img class="swiper__img swiper__img--prev">
+            <img class="swiper__img swiper__img--next">
         </div>
-        <button class="swiper_btn swiper_btn--next">▶</button>
-        <button class="swiper_btn swiper_btn--prev">◀</button>
-        <div class="swiper_pagination">
-            <button class="swiper_dot swiper_dot--active"></button>
-            <button class="swiper_dot"></button>
-            <button class="swiper_dot"></button>
-            <button class="swiper_dot"></button>
+        <button class="swiper__btn swiper__btn--next">▶</button>
+        <button class="swiper__btn swiper__btn--prev">◀</button>
+        <div class="swiper__pagination">
         </div>
     </section>
 
     <!-- 關於比露 -->
-    <section class="about_belleu">
-        <h1>什麼是 Belleu？</h1>
-        <p>我們希望成為螢幕彼岸的你，最溫暖的購物夥伴。</p>
-        <p>從日常需求的時尚單品，到讓您在重要時刻閃耀的精緻服裝，我們都將陪伴在你的身旁。</p>
+    <section class="about">
+        <h1 class="about__title">什麼是 Belleu？</h1>
+        <p class="about__text">我們希望成為螢幕彼岸的你，最溫暖的購物夥伴。</p>
+        <p class="about__text">從日常需求的時尚單品，到讓您在重要時刻閃耀的精緻服裝，我們都將陪伴在你的身旁。</p>
 
-        <div class="about_belleu_gallery">
-            <figure>
-                <img src="../image/page/index/gallery/gallery(1).png">
-                <figcaption>因為好看所以1+1🖤</figcaption>
+        <div class="about__gallery">
+            <figure class="about__item">
+                <img class="about__img" src="../image/page/index/gallery/gallery(1).png">
+                <figcaption class="about__caption">因為好看所以1+1🖤</figcaption>
             </figure>
 
-            <figure>
-                <img src="../image/page/index/gallery/gallery(2).png">
-                <figcaption>今天9點前下單'明天就到'💙</figcaption>
+            <figure class="about__item">
+                <img class="about__img" src="../image/page/index/gallery/gallery(2).png">
+                <figcaption class="about__caption">今天9點前下單'明天就到'💙</figcaption>
             </figure>
 
-            <figure>
-                <img src="../image/page/index/gallery/gallery(3).png">
-                <figcaption>這次讓我們陪你過夏天💚</figcaption>
+            <figure class="about__item">
+                <img class="about__img" src="../image/page/index/gallery/gallery(3).png">
+                <figcaption class="about__caption">這次讓我們陪你過夏天💚</figcaption>
             </figure>
 
-            <figure>
-                <img src="../image/page/index/gallery/gallery(4).png">
-                <figcaption>'自拍活動'進行中 📷</figcaption>
+            <figure class="about__item">
+                <img class="about__img" src="../image/page/index/gallery/gallery(4).png">
+                <figcaption class="about__caption">'自拍活動'進行中 📷</figcaption>
             </figure>
         </div>
-
     </section>
 
-    <section class="product_recommend">
-        <h2 class="product_recommend_title">Belleu比露為您推薦</h2>
-        <p class="product_recommend_intro">您的尺寸之中最熱門的商品！⛱️</p>
-        <ul class="product_recommend_list">
-            <li class="product_card">
+    <section class="recommend">
+        <h2 class="recommend__title">Belleu比露為您推薦</h2>
+        <p class="recommend__intro">您的尺寸之中最熱門的商品！⛱️</p>
+        <ul class="recommend__list">
+            <li class="product-card">
 
             </li>
         </ul>
-        <div class="product_recommend_list_pagination">
-            <button
-                class="product_recommend_list_pagination_button product_recommend_list_pagination_button_prev">«</button>
-            <div class="product_recommend_list_pagination_placer"></div>
-            <button
-                class="product_recommend_list_pagination_button product_recommend_list_pagination_button_next">»</button>
+        <div class="recommend__pagination">
+            <button class="recommend__btn recommend__btn--prev">«</button>
+            <div class="recommend__dots"></div>
+            <button class="recommend__btn recommend__btn--next">»</button>
         </div>
 
     </section>
 
     <section class="store">
-        <div class="store_info">
-            <h2 class="store_info_title">品牌資訊</h2>
-            <ul class="store_info_datas">
-                <li class="store_info_data"><strong class="store_info_data_strong">店家名稱：</strong>BELLEU 比露時尚潮流服飾
+        <div class="store__info">
+            <h2 class="store__title">品牌資訊</h2>
+            <ul class="store__list">
+                <li class="store__item">
+                    <strong class="store__label">店家名稱：</strong>
+                    BELLEU 比露時尚潮流服飾
                 </li>
-                <li class="store_info_data"><strong class="store_info_data_strong">地址：</strong>新北市板橋區歐嗨喲路117號4樓（板橋大遠百4樓）
+                <li class="store__item"><strong class="store__label">地址：</strong>新北市板橋區歐嗨喲路117號4樓（板橋大遠百4樓）
                 </li>
-                <li class="store_info_data"><strong class="store_info_data_strong">連絡電話：</strong>(TID)102-11-8939
+                <li class="store__item"><strong class="store__label">連絡電話：</strong>(TID)102-11-8939
                 </li>
-                <li class="store_info_data"><strong class="store_info_data_strong">營業時間（平日）：</strong>13:00–22:00
+                <li class="store__item"><strong class="store__label">營業時間（平日）：</strong>13:00–22:00
                 </li>
-                <li class="store_info_data"><strong class="store_info_data_strong">營業時間（例假日）：</strong>10:00–24:00
+                <li class="store__item"><strong class="store__label">營業時間（例假日）：</strong>10:00–24:00
                 </li>
             </ul>
-            <h3 class="store_info_subtitle">下載BELLEU官方APP</h3>
-            <div class="store_info_app">
-                <img class="store_info_app_logo" src="../image/components/app_logo.png" alt="app_logo">
+            <h3 class="store__subtitle">下載BELLEU官方APP</h3>
+            <div class="store__app">
+                <img class="store__app-logo" src="../image/components/app_logo.png" alt="app_logo">
 
-                <ul class="store_info_app_downloads">
-                    <li class="store_info_app_download"><strong><i class="fa-brands fa-google"></i></strong>Download
+                <ul class="store__downloads">
+                    <li class="store__download"><strong><i class="fa-brands fa-google"></i></strong>Download
                     </li>
-                    <li class="store_info_app_download"><strong><i class="fa-brands fa-apple"></i></strong>Download
+                    <li class="store__download"><strong><i class="fa-brands fa-apple"></i></strong>Download
                     </li>
                 </ul>
             </div>
         </div>
-        <!-- <div class="store_map">
+        <!-- <div class="store__map">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.589378721624!2d121.46733320000001!3d25.0140651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a81eef069bf7%3A0xcd9504020d005103!2z5p2_5qmL5aSn6YGg55m-!5e0!3m2!1szh-TW!2stw!4v1767893430239!5m2!1szh-TW!2stw"
                 width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"

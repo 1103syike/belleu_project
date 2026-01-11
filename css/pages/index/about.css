@@ -1,10 +1,10 @@
-.about_belleu {
+.about {
     background-color: #F6F4EE;
     padding: 100px 10vw;
     box-sizing: border-box;
 }
 
-.about_belleu h1 {
+.about__title {
     font-size: 22px;
     color: #736B60;
     font-weight: bold;
@@ -13,43 +13,43 @@
     user-select: none;
 }
 
-.about_belleu p {
+.about__text {
     font-size: 16px;
     color: #736B60;
     text-align: center;
     user-select: none;
 }
 
-.about_belleu p:first-of-type {
+.about__text:first-of-type {
     margin-bottom: 10px;
 }
 
-.about_belleu p:last-of-type {
+.about__text:last-of-type {
     margin-bottom: 50px;
 }
 
-.about_belleu_gallery {
+.about__gallery {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
 }
 
-.about_belleu_gallery figure img {
-    width: 19vw;
-}
-
-.about_belleu_gallery figure {
+.about__item {
     cursor: pointer;
     box-sizing: border-box;
     border: 2px solid transparent;
 }
 
-.about_belleu_gallery figure:hover {
+.about__item:hover {
     border: 2px solid #736B60;
 }
 
-.about_belleu_gallery figure figcaption {
+.about__img {
+    width: 19vw;
+}
+
+.about__caption {
     color: #736B60;
     font-size: 18px;
     margin-top: 5px;

@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let prevSlideNumber = 3
 
     // 捕捉元件的容器。
-    const currentSlide = document.getElementsByClassName("currentIndex")[0];
-    const prevSlide = document.getElementsByClassName("prevIndex")[0];
-    const nextSlide = document.getElementsByClassName("nextIndex")[0];
+    const currentSlide = document.getElementsByClassName("swiper__img--current")[0];
+    const prevSlide = document.getElementsByClassName("swiper__img--prev")[0];
+    const nextSlide = document.getElementsByClassName("swiper__img--next")[0];
 
     // 灌入預設的圖片。
     currentSlide.src = slides[currentSlideNumber].src;
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     nextSlide.src = slides[nextSlideNumber].src;
 
     // 捕捉按鈕。
-    const next_btn = document.getElementsByClassName('swiper_btn--next')[0];
-    const prev_btn = document.getElementsByClassName('swiper_btn--prev')[0];
+    const next_btn = document.getElementsByClassName('swiper__btn--next')[0];
+    const prev_btn = document.getElementsByClassName('swiper__btn--prev')[0];
 
 
     next_btn.addEventListener('click', () => {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentSlide.src = slides[currentSlideNumber].src;
     }
 
-    const mask = document.getElementsByClassName('swiper_mask')[0];
+    const mask = document.getElementsByClassName('swiper__mask')[0];
 
     // nextSlide滑動特效
     function slideNext() {
@@ -126,21 +126,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     startAutoPlay();
 
-    const swiper_pagination = document.getElementsByClassName('swiper_pagination')[0];
+    const swiper_pagination = document.getElementsByClassName('swiper__pagination')[0];
     const swiper_dot = document.createElement('button');
-    swiper_dot.className = 'swiper_dot'
+    swiper_dot.className = 'swiper__dot'
     swiper_pagination.appendChild(swiper_dot)
     swiper_pagination.innerHTML = slides.map(p => `
-            <button class="swiper_dot" id="swiper_dot_${p.id}"></button>
+            <button class="swiper__dot" id="swiper__dot__${p.id}"></button>
         `).join('');
 
-    const swiper_dots = document.getElementsByClassName('swiper_dot');
+    const swiper_dots = document.getElementsByClassName('swiper__dot');
 
     function renewActiveDot() {
         for (let i = 0; i < slides.length; i++) {
-            swiper_dots[i].classList.remove('swiper_dot--active')
+            swiper_dots[i].classList.remove('swiper__dot--active')
         }
-        swiper_dots[currentSlideNumber].classList.add('swiper_dot--active')
+        swiper_dots[currentSlideNumber].classList.add('swiper__dot--active')
     }
 
     function disabledAddDots() {
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
             renewActiveDot()
             disabledAddDots()
             for (let i = 0; i < slides.length; i++) {
-                swiper_dots[i].classList.remove('swiper_dot--active')
+                swiper_dots[i].classList.remove('swiper__dot--active')
             }
             setTimeout(() => {
                 currentImgSetting()

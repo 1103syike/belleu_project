@@ -6,39 +6,34 @@
     padding: 40px 100px 20px;
 }
 
-.footer_body {
+.footer__body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.footer_left {
+.footer__left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 80px;
 }
 
-.footer .nav {
+.footer__nav {
     display: flex;
     flex-direction: row;
     gap: 50px;
 }
 
-.footer .nav_link {
+.footer__link {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-.footer .about {
+.footer__about {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
     margin-bottom: 10px;
-}
-
-.footer .about_title {
     display: flex;
     flex-direction: row;
     color: white;
@@ -48,44 +43,44 @@
     font-weight: 500;
 }
 
-.footer .brand {
+.footer__brand {
     font-size: 36px;
     font-family: gaegu;
     font-weight: normal;
 }
 
-.footer_bottom {
+.footer__bottom {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.footer .item {
+.footer__item {
     color: white;
     font-size: 16px;
 }
 
 
-.footer_right {
+.footer__right {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.footer .info {
+.footer__info {
     color: white;
     font-size: 18px;
 }
 
-.footer .label {
+.footer__label {
     font-weight: 500;
 }
 
-.footer .info:nth-child(2) {
+.footer__info:nth-child(2) {
     margin-bottom: 10px;
 }
 
-.footer_bottom .label {
+.footer__bottom .footer__label {
     margin-right: 10px;
     font-weight: 500;
 }

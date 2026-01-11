@@ -2,35 +2,35 @@
     position: relative;
 }
 
-.swiper--hero .swiper_track {
+.swiper--hero .swiper__track {
     display: flex;
     flex-direction: row;
     background-color: black;
     overflow: hidden;
 }
 
-.swiper--hero .swiper_img {
+.swiper--hero .swiper__img {
     width: 100%;
     transition: transform 0.4s ease;
 
 }
 
-.swiper--hero .prevIndex,
-.swiper--hero .nextIndex {
+.swiper--hero .swiper__img--prev,
+.swiper--hero .swiper__img--next {
     position: absolute;
 }
 
 
 
-.swiper--hero .prevIndex {
+.swiper--hero .swiper__img--prev {
     transform: translateX(-100%);
 }
 
-.swiper--hero .nextIndex {
+.swiper--hero .swiper__img--next {
     transform: translateX(100%);
 }
 
-.swiper--hero .swiper_btn {
+.swiper--hero .swiper__btn {
     font-size: 40px;
     position: absolute;
     top: 50%;
@@ -44,20 +44,20 @@
     background: none;
 }
 
-.swiper--hero .swiper_btn:hover {
+.swiper--hero .swiper__btn:hover {
     color: red;
 }
 
-.swiper--hero .swiper_btn--next {
+.swiper--hero .swiper__btn--next {
     right: 2%;
 }
 
-.swiper--hero .swiper_btn--prev {
+.swiper--hero .swiper__btn--prev {
     left: 2%;
 }
 
 
-.swiper--hero .swiper_mask {
+.swiper--hero .swiper__mask {
     display: none;
     position: absolute;
     background-color: black;
@@ -66,7 +66,7 @@
     opacity: 60%;
 }
 
-.swiper--hero .swiper_pagination {
+.swiper--hero .swiper__pagination {
     user-select: none;
     position: absolute;
     left: 50%;
@@ -74,16 +74,16 @@
     bottom: 8px;
 }
 
-.swiper--hero .swiper_dot {
+.swiper--hero .swiper__dot {
     cursor: pointer;
     padding: 7px;
     border: none;    background-color: #A49694;
     border-radius: 90px;
 }
-.swiper--hero .swiper_dot:hover{
+.swiper--hero .swiper__dot:hover{
     background-color: #4B4237;
 
 }
-.swiper--hero .swiper_dot--active{
+.swiper--hero .swiper__dot--active{
     background-color: #4B4237;
 }

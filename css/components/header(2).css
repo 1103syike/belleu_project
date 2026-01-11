@@ -7,7 +7,7 @@
     position: fixed;
 }
 
-.header .nav {
+.header .nav__list {
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -18,19 +18,19 @@
     user-select: none;
 }
 
-.header .nav_link {
+.header .nav__link {
     display: block;
     font-size: 18px;
     color: #4B4237;
 }
 
-.header .nav_logo {
+.header .nav__link--logo {
     font-family: Gaegu;
     font-size: 40px;
     color: #4B4237;
 }
 
-.header .nav_item:nth-last-child(2) {
+.header .nav__item:nth-last-child(2) {
     margin-left: auto;
 }
 
