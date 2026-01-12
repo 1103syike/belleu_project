@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 1, name: '巴黎字母T恤',
             desc: '寬鬆休閒版型，選用柔軟親膚棉料，透氣不悶、久穿依然舒適。正面字母印花設計，簡約中帶有法式氛圍，視覺乾淨耐看。下身不論搭配牛仔褲、短裙或寬褲都能輕鬆完成造型，日常、通勤、假日外出都合適。',
             price: { original: '890元', sale: '599元' },
-            imagePath: '../image/products/product-1(blue).png',
+            imagePath: '../image/products/product-1(red).png',
             color: {
                 red: {
                     id: 0,
