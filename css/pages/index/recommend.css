@@ -27,44 +27,6 @@
     gap: 4vw calc(8vw / 5);
 }
 
-.recommend .product-card {
-    display: block;
-    position: relative;
-}
-
-.recommend .product-card:hover .product-card__mask {
-    display: block;
-}
-
-
-
-.recommend .product-card__link {
-    position: relative;
-    user-select: none;
-}
-
-.recommend .product-card__img {
-    user-select: none;
-    display: block;
-    width: 230px;
-}
-
-.recommend .product-card__img--front {
-    display: block;
-}
-
-.recommend .product-card__img--back {
-    display: none;
-}
-
-.recommend .product-card:hover .product-card__img--front {
-    display: none;
-}
-
-.recommend .product-card:hover .product-card__img--back {
-    display: block;
-}
-
 .recommend__dots {
     display: flex;
     flex-direction: row;
@@ -93,60 +55,6 @@
 
 .recommend__dot--active:hover {
     background-color: #A49694;
-}
-
-
-.recommend .product-card__cta {
-    display: none;
-}
-
-.recommend .product-card:hover .product-card__cta {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -125%);
-    border: 1px solid #F6F4EE;
-    color: #F6F4EE;
-    padding: 5px 10px;
-    font-size: 16px;
-}
-
-.recommend .product-card__mask {
-    display: none;
-    top: 0;
-    position: absolute;
-    width: 230px;
-    height: 230px;
-    background-color: black;
-    opacity: 60%;
-}
-
-.recommend .product-card__name,
-.recommend .product-card__price {
-    color: #4B4237;
-    margin-left: 10px;
-    margin-top: 10px;
-}
-
-.recommend .product-card__name {
-    font-size: 20px;
-}
-
-.recommend .product-card__price {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.recommend .product-card__discount {
-    color: red;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.recommend .product-card__amount {
-    font-size: 18px;
 }
 
 .recommend__pagination {

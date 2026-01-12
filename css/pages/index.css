@@ -4,14 +4,8 @@
 @import url("../pages/index/about.css");
 @import url("../pages/index/recommend.css");
 @import url("../pages/index/store.css");
+@import url("../components/marquee.css");
 @import url("../components/header.css");
+@import url("../components/product-card.css");
 @import url("../components/footer.css");
 
-.marquee {
-    order: -2;
-    color: white;
-    background-color: #E5AAA3;
-    font-size: 16px;
-    text-align: center;
-    padding: 10px 0;
-}

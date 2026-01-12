@@ -1,0 +1,40 @@
+.quantity {
+    display: flex;
+    border: 1px solid gray;
+    padding: 12px 8px;
+}
+
+/* Chrome / Edge / Safari */
+.quantity__input::-webkit-inner-spin-button,
+.quantity__input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.quantity__input {
+    -moz-appearance: textfield;
+    text-align: center;
+    border: none;
+    width: 100%;
+    padding: 0;
+}
+
+.quantity__input[type=number]:focus {
+    outline: none;
+}
+
+.quantity:focus-within{
+    border: 1px solid black;
+}
+
+.quantity__btn {
+    color: gray;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.quantity__btn:hover{
+    color: #4B4237;
+
+}

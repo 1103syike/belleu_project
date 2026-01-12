@@ -1,0 +1,29 @@
+.size-list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.size-list__block {
+    user-select: none;
+    cursor: pointer;
+    padding: 8px;
+    box-sizing: border-box;
+    background: none;
+    border: 1px solid transparent;
+}
+
+.size-list__size {
+    line-height: 100%;
+}
+
+.size-list__name {
+    margin-left: 4px;
+    color: #4B4237;
+    font-size: 16px;
+}
+
+.size-list__item--active .size-list__block {
+    border: 1px solid black;
+}

@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     const products = [
-        { id: 1, name: '服飾-1', price: '599元', discount: '65%' },
-        { id: 2, name: '服飾-2', price: '629元', discount: '65%' },
-        { id: 3, name: '服飾-3', price: '549元', discount: '65%' },
-        { id: 4, name: '服飾-4', price: '689元', discount: '65%' },
-        { id: 5, name: '服飾-5', price: '599元', discount: '65%' },
-        { id: 6, name: '服飾-6', price: '599元', discount: '65%' },
-        { id: 7, name: '服飾-7', price: '599元', discount: '65%' },
-        { id: 8, name: '服飾-8', price: '599元', discount: '65%' },
-        { id: 9, name: '服飾-9', price: '599元', discount: '65%' },
-        { id: 10, name: '服飾-10', price: '599元', discount: '65%' },
-        { id: 11, name: '服飾-11', price: '599元', discount: '65%' },
-        { id: 12, name: '服飾-12', price: '599元', discount: '65%' },
-        { id: 13, name: '服飾-13', price: '599元', discount: '65%' },
-        { id: 14, name: '服飾-14', price: '599元', discount: '65%' },
+        { id: 1, name: '巴黎字母T恤', price: '599元', discount: '69%' },
+        { id: 2, name: '學院風鈕扣百褶裙', price: '629元', discount: '49%' },
+        { id: 3, name: '夏季抽褶背心襯衫', price: '549元', discount: '49%' },
+        { id: 4, name: '條紋緊身胸衣背心', price: '689元', discount: '69%' },
+        { id: 5, name: '簡約無袖節慶短上衣', price: '599元', discount: '59%' },
+        { id: 6, name: '條紋荷葉邊長連身裙', price: '599元', discount: '69%' },
+        { id: 7, name: '喇叭形迷你一件式', price: '599元', discount: '59%' },
+        { id: 8, name: '百褶迷你裙', price: '599元', discount: '79%' },
+        { id: 9, name: '五月百褶長裙', price: '599元', discount: '69%' },
+        { id: 10, name: '無領金色紐帶夾克', price: '599元', discount: '69%' },
+        { id: 11, name: '舒適連帽繫帶風衣背心', price: '599元', discount: '59%' },
+        { id: 12, name: '短版針織緊身胸衣', price: '599元', discount: '79%' },
+        { id: 13, name: '短版紐帶氨綸短袖上衣', price: '599元', discount: '69%' },
+        { id: 14, name: '綠色修身毛毛外套', price: '599元', discount: '49%' },
     ];
 
     const product_list = document.getElementsByClassName('recommend__list')[0]

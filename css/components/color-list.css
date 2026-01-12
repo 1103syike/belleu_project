@@ -1,0 +1,32 @@
+.color-list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.color-list__block {
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: 1px solid transparent;
+    user-select: none;
+}
+
+.color-list__name {
+    margin-left: auto;
+    color: #4B4237;
+    font-size: 16px;
+}
+
+.color-list__color {
+    padding: 10px;
+    box-sizing: border-box;
+}
+.color-list__item{
+    order: -1;
+}
+
+.color-list__item--active .color-list__block{
+    border: 1px solid black;
+}

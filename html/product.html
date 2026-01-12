@@ -13,51 +13,163 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../js/components/header.js"></script>
-    <script src="../js/components/footer.js"></script>
+    <!-- <script src="../js/components/footer.js"></script> -->
     <script src="../js/pages/product.js"></script>
 
 </head>
 
 <body>
     <section class="header-block"></section>
-    <section class="product_intro">
-        <aside class="gallery">
-            <img class="gallery_img" src="../image/products/product_card_img(1-1).png" alt="">
-        </aside>
-        <aside class="information">
-            <button class="like_button"><i class="fa-regular fa-heart"></i></button>
-            <div class="product-info">
-                <h1>服飾-1</h1>
-                <p class="price-original">899 元</p>
-                <p class="price-sale">599 元</p>
-            </div>
-            <p class="">藍色調商品</p>
-            <div class="">
-                <ul class="color_list">
-                    <li class="color_chosen">
-                        <button class="color_block"></button>
-                    </li>
-                    <li class="color_chosen">
-                        <div class="color_block"></div>
-                    </li>
-                    <li class="color_chosen">
-                        <div class="color_block"></div>
-                    </li>
-                </ul>
-                <p>軍藍色</p>
-            </div>
-            <div class="choose_size">
-                <ul class="size_list">
-                    <li class="size_chosen">S</li>
-                    <li class="size_chosen">M</li>
-                    <li class="size_chosen">L</li>
-                </ul>
-            </div>
+    <section class="product">
+        <aside class="product__gallery">
+            <img class="product__image" src="../image/products/product_card_img(1-1).png" alt="">
 
+        </aside>
+        <aside class="product__info">
+            <button class="product__btn">♡</button>
+
+            <div class="product__header">
+                <h1 class="product__title"></h1>
+                <p class="product__price product__price--original"></p>
+                <p class="product__price product__price--sale"></p>
+            </div>
+            <div class="product__event">
+                <p class="product__event-name">精選組合．2件$998</p>
+            </div>
+            <div class="product__colors">
+                <p class="product__desc"></p>
+                <div class="product__colors">
+                    <ul class="color-list">
+                        
+                    </ul>
+                </div>
+                <div class="product__sizes">
+                    <ul class="size-list">
+                        <li class="size-list__item size-list__item--active">
+                            <button class="size-list__block">
+                                <p class="size-list__size">S</p>
+                            </button>
+                        </li>
+                        <li class="size-list__item">
+                            <button class="size-list__block">
+                                <p class="size-list__size">M</p>
+                            </button>
+                        </li>
+                        <li class="size-list__item">
+                            <button class="size-list__block">
+                                <p class="size-list__size">L</p>
+                            </button>
+                        </li>
+                    </ul>
+                    <p class="product__stock">庫存:40</p>
+                </div>
+                <div class="product__qty">
+                    <div class="quantity">
+                        <button class="quantity__btn quantity__btn--minus">−</button>
+                        <input class="quantity__input" type="number" value="1" min="1">
+                        <button class="quantity__btn quantity__btn--plus">＋</button>
+                    </div>
+                </div>
+                <div class="product__actions">
+                    <div class="action">
+                        <button class="action__btn action__btn--add-cart">加入購物車</button>
+                        <button class="action__btn action__btn--checkout">立即結帳</button>
+                    </div>
+                </div>
+                <p class="product__notice">
+                    預購商品預計約35-45個工作日(不含例假日)，期間可能會出現延遲或缺貨情況，若能等待再下單，感謝您的理解與支持。
+                </p>
+                <!-- <nav class="product-tabs">
+                    <button class="product-tabs__tab product-tabs__tab--active">商品資訊</button>
+                    <button class="product-tabs__tab">洗滌方式</button>
+                    <button class="product-tabs__tab">尺寸指南</button>
+                </nav> -->
+                <section class="product-tabs__panel product-tabs__panel--info product-tabs__panel--active">
+                    <h2 class="product-tabs__title">商品資訊</h2>
+                    <p class="product-tabs__text">此款版型<span class="product__highlight">合身</span></p>
+                    <p class="product-tabs__text">• 彈性羊絨蛋白棉料，表面磨毛手感，穿著親膚溫暖</p>
+                    <p class="product-tabs__text">• 金屬壓釦門襟，可自行做開釦造型</p>
+                    <p class="product-tabs__text">• 高領連帽設計，視覺小臉效果</p>
+                    <p class="product-tabs__note">(每批布皆有些微色差屬正常現象)</p>
+
+                    <dl class="product-tabs__spec">
+                        <div class="product-tabs__group">
+                            <dt class="product-tabs__term">嫘縈</dt>
+                            <dd class="product-tabs__value">92%</dd>
+
+                            <dt class="product-tabs__term">彈性纖維</dt>
+                            <dd class="product-tabs__value">8%</dd>
+                        </div>
+                        <div class="product-tabs__group">
+                            <dt class="product-tabs__term">厚薄</dt>
+                            <dd class="product-tabs__value">適中</dd>
+                        </div>
+                        <div class="product-tabs__group">
+                            <dt class="product-tabs__term">彈性</dt>
+                            <dd class="product-tabs__value">佳</dd>
+                        </div>
+                        <div class="product-tabs__group">
+                            <dt class="product-tabs__term">素材產地</dt>
+                            <dd class="product-tabs__value">中國</dd>
+                        </div>
+                        <div class="product-tabs__group">
+                            <dt class="product-tabs__term">加工產地</dt>
+                            <dd class="product-tabs__value">中國</dd>
+                        </div>
+                    </dl>
+                </section>
+                <section class="product-tabs__panel">
+                    <h2 class="product-tabs__title">洗滌方式</h2>
+                    <ol class="product-tabs__list">
+                        <li class="product-tabs__item">深淺色請分開洗滌，以避免造成互相移染。</li>
+                        <li class="product-tabs__item">請放入大小適中之細網洗衣袋細中弱速水洗，以保持商品型態。</li>
+                        <li class="product-tabs__item">洗滌時，水溫請低於30℃；請使用中性洗劑；浸泡時間不宜過長。</li>
+                        <li class="product-tabs__item">請勿使用漂白劑、螢光增白劑及衣物柔軟劑，以免破壞布料。</li>
+                        <li class="product-tabs__item">不可濕放，以免衣物染色；請弱速輕脫水，不可烘乾，以免衣物縮水。</li>
+                        <li class="product-tabs__item">清洗後請快速調整商品型態並吊掛晾乾即可。</li>
+                        <li class="product-tabs__item">如需整燙，請以低溫墊布熨燙，溫度不可超過110℃。</li>
+                        <li class="product-tabs__item">穿著時，請留意避免與配件包包等他物接觸摩擦。</li>
+                    </ol>
+
+                </section>
+                <section class="product-tabs__panel">
+                    <h2 class="product-tabs__title">尺寸資訊</h2>
+
+                    <div class="product-tabs__table-wrap">
+                        <table class="size-table">
+                            <thead class="size-table__head">
+                                <tr class="size-table__row">
+                                    <th class="size-table__th">適穿尺寸</th>
+                                    <th class="size-table__th">身高</th>
+                                    <th class="size-table__th">體重</th>
+                                </tr>
+                            </thead>
+                            <tbody class="size-table__body">
+                                <tr class="size-table__row">
+                                    <td class="size-table__td">S</td>
+                                    <td class="size-table__td">155–162cm</td>
+                                    <td class="size-table__td">51–57公斤</td>
+                                </tr>
+                                <tr class="size-table__row">
+                                    <td class="size-table__td">M</td>
+                                    <td class="size-table__td">163–168cm</td>
+                                    <td class="size-table__td">57–63公斤</td>
+                                </tr>
+                                <tr class="size-table__row">
+                                    <td class="size-table__td">L</td>
+                                    <td class="size-table__td">168–173cm</td>
+                                    <td class="size-table__td">63–75公斤</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="product-tabs__note">小提醒：版型寬鬆，喜歡寬鬆建議拿大一碼。</p>
+                </section>
         </aside>
     </section>
 
-    <section class="another_produce" style="height: 200vh; background-color: rebeccapurple;">
+    <section class="another_produce">
 
     </section>
 

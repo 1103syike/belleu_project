@@ -1,0 +1,28 @@
+.action {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.action__btn {
+    width: 50%;
+    padding: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: none;
+    border: 1px solid gray;
+}
+
+.action__btn--add-cart:hover{
+    background-color: #736B60;
+    color: white;
+    border: 1px solid #736B60;
+
+}
+
+.action__btn--checkout:hover{
+    color: white;
+    border: 1px solid #4B4237;
+    background-color: #4B4237;
+}
+

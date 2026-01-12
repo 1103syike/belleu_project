@@ -20,8 +20,6 @@
     position: absolute;
 }
 
-
-
 .swiper--hero .swiper__img--prev {
     transform: translateX(-100%);
 }
@@ -36,10 +34,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: whitesmoke;
-    /* 點擊 */
     cursor: pointer;
-    /* 不可反白 */
-    user-select: none;
     border: none;
     background: none;
 }
@@ -56,7 +51,6 @@
     left: 2%;
 }
 
-
 .swiper--hero .swiper__mask {
     display: none;
     position: absolute;
@@ -67,7 +61,6 @@
 }
 
 .swiper--hero .swiper__pagination {
-    user-select: none;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

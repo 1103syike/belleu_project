@@ -1,7 +1,11 @@
 @import url("../base/reset.css");
 @import url("../base/style.css");
 @import url("../components/header(2).css");
-@import url("../pages/product/product_intro.css");
+@import url("../components/color-list.css");
+@import url("../components/size-list.css");
+@import url("../components/quantity.css");
+@import url("../components/action.css");
+@import url("../pages/product/intro.css");
 @import url("../components/footer.css");
 
 .header-block{
