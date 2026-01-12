@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 1, name: '巴黎字母T恤',
             desc: '寬鬆休閒版型，選用柔軟親膚棉料，透氣不悶、久穿依然舒適。正面字母印花設計，簡約中帶有法式氛圍，視覺乾淨耐看。下身不論搭配牛仔褲、短裙或寬褲都能輕鬆完成造型，日常、通勤、假日外出都合適。',
             price: { original: '890元', sale: '599元' },
-            imagePath: '/image/products/product-1(red).png',
+            imagePath: '../image/products/product-1(red).png',
             color: {
                 red: {
                     id: 0,
                     name: '紅色',
                     hex: '#B20E30',
-                    imagePath: '/image/products/product-1(red).png',
+                    imagePath: '../image/products/product-1(red).png',
                     Stock: {
                         S: 2,
                         M: 5,
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     id: 1,
                     name: '藍色',
                     hex: '#3B4A6B',
-                    imagePath: '/image/products/product-1(blue).png',
+                    imagePath: '../image/products/product-1(blue).png',
                     Stock: {
                         S: 4,
                         M: 1,
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     id: 2,
                     name: '綠色',
                     hex: '#23413F',
-                    imagePath: '/image/products/product-1(green).png',
+                    imagePath: '../image/products/product-1(green).png',
                     Stock: {
                         S: 6,
                         M: 9,
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     id: 3,
                     name: '燕麥色',
                     hex: '#E3DBD8',
-                    imagePath: '/image/products/product-1(oatmeal).png',
+                    imagePath: '../image/products/product-1(oatmeal).png',
                     Stock: {
                         S: 2,
                         M: 3,
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     id: 4,
                     name: '灰色',
                     hex: '#C1BFC0',
-                    imagePath: '/image/products/product-1(gray).png',
+                    imagePath: '../image/products/product-1(gray).png',
                     Stock: {
                         S: 12,
                         M: 5,

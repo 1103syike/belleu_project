@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         product_list.innerHTML = pageData.map(p => `
             <li class="product-card " data-id="${p.id}">
                 <a class="product-card__link" href="html/product.html">
-                    <img class="product-card__img product-card__img--front" src='/image/products/product_card_img(${p.id}-2).png'>
-                    <img class="product-card__img product-card__img--back" src='/image/products/product_card_img(${p.id}-1).png'>
+                    <img class="product-card__img product-card__img--front" src='./image/products/product_card_img(${p.id}-2).png'>
+                    <img class="product-card__img product-card__img--back" src='./image/products/product_card_img(${p.id}-1).png'>
 
                     <div class="product-card__mask"></div>
                     <p class="product-card__cta">現在購買</p>

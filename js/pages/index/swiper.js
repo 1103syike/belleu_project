@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const slides = [
-        { id: 1, name: '輪播圖-1', src: '/image/page/index/swiper/swiper(1).png' },
-        { id: 2, name: '輪播圖-2', src: '/image/page/index/swiper/swiper(2).png' },
-        { id: 3, name: '輪播圖-3', src: '/image/page/index/swiper/swiper(3).png' },
-        { id: 4, name: '輪播圖-4', src: '/image/page/index/swiper/swiper(4).png' }
+        { id: 1, name: '輪播圖-1', src: './image/page/index/swiper/swiper(1).png' },
+        { id: 2, name: '輪播圖-2', src: './image/page/index/swiper/swiper(2).png' },
+        { id: 3, name: '輪播圖-3', src: './image/page/index/swiper/swiper(3).png' },
+        { id: 4, name: '輪播圖-4', src: './image/page/index/swiper/swiper(4).png' }
     ]
 
     let currentSlideNumber = 0
