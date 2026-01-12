@@ -1,12 +1,12 @@
-@import url("/base/reset.css");
-@import url("/base/style.css");
-@import url("/components/header(2).css");
-@import url("/components/color-list.css");
-@import url("/components/size-list.css");
-@import url("/components/quantity.css");
-@import url("/components/action.css");
-@import url("/pages/product/intro.css");
-@import url("/components/footer.css");
+@import url("/css/base/reset.css");
+@import url("/css/base/style.css");
+@import url("/css/components/header(2).css");
+@import url("/css/components/color-list.css");
+@import url("/css/components/size-list.css");
+@import url("/css/components/quantity.css");
+@import url("/css/components/action.css");
+@import url("/css/pages/product/intro.css");
+@import url("/css/components/footer.css");
 
 .header-block{
     height: 80px;
