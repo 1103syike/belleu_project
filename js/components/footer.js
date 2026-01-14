@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="footer__body">
             <div class="footer__left">
                 <nav class="footer__nav">
-                    <a href="#" class="footer__link">關於比露</a>
+                    <a href="../html/concept.html" class="footer__link">關於比露</a>
                     <a href="#" class="footer__link">會員福利</a>
                     <a href="#" class="footer__link">使用條款</a>
                     <a href="#" class="footer__link">隱私權政策</a>
