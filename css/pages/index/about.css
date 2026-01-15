@@ -36,6 +36,7 @@
 }
 
 .about__item {
+    user-select: none;
     cursor: pointer;
     box-sizing: border-box;
     border: 2px solid transparent;
@@ -47,6 +48,7 @@
 
 .about__img {
     width: 19vw;
+    user-select: none;
 }
 
 .about__caption {

@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const products = [
         {
-            id: 1,
-            name: '巴黎字母T恤',
-            price: { original: 890, sale: 599, discount: 67 },
+            id: 1, name: '巴黎字母T恤', price: { original: 890, sale: 599, discount: 67 },
             desc: '寬鬆休閒版型，選用柔軟親膚棉料，透氣不悶、久穿依然舒適。正面字母印花設計，簡約中帶有法式氛圍，視覺乾淨耐看。下身不論搭配牛仔褲、短裙或寬褲都能輕鬆完成造型，日常、通勤、假日外出都合適。',
             variants: [
                 {
@@ -64,28 +62,149 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         },
         {
-            id: 2, name: '學院風鈕扣百褶裙', price: { original: '1290元', sale: '629元', discount: '49%' },
-            desc: '俐落百褶剪裁，自然修飾腿部線條並拉長比例。正面鈕扣設計增添學院感細節，穿著穩定不易跑位。布料挺度適中，行走間保有線條感，搭配襯衫、針織或短版上衣都能展現清新知性風格。',
-            color: {
-                beige: { id: 0, name: '米色', hex: '#EFEAE6', stock: { S: { id: 0, name: 'S', number: 3 }, M: { id: 1, name: 'M', number: 5 }, L: { id: 2, name: 'L', number: 7, } } },
-            },
-            images: [
-                '../image/products/product-2(beige).png',
+            id: 2, name: '學院風鈕扣百褶裙', price: { original: 1290, sale: 629, discount: 49 },
+            desc: '柔軟親膚針織面料，穿著舒適不刺癢。領口絲帶設計增添層次與造型感，修飾頸部線條，甜而不膩。版型俐落不貼身，單穿或內搭都好看，日常、通勤都適合。',
+            variants: [
+                {
+                    id: 0,
+                    key: 'beige',
+                    name: '米色',
+                    hex: '#EDE8D0',
+                    stock: { S: 3, M: 5, L: 7 },
+                    images: [
+                        '../image/products/product-2(beige-1).png',
+                        '../image/products/product-2(beige-2).png',
+                        '../image/products/product-2(beige-3).png',
+                        '../image/products/product-2(beige-4).png',
+                    ]
+                },
             ]
         },
         {
-            id: 3, name: '夏季抽褶背心襯衫', price: { original: '1090元', sale: '549元', discount: '50%', },
+            id: 3, name: '夏季抽褶背心襯衫', price: { original: 1090, sale: 549, discount: 50 },
             desc: '輕薄涼爽布料，夏天穿著不黏膚、透氣舒適。抽褶設計自然修飾身形曲線，背心版型清爽俐落。單穿就有造型感，也可外搭罩衫或西外，從日常到通勤都能輕鬆駕馭。',
-            color: {
-                white: { id: 0, name: '白色', hex: '#EFEFEF', stock: { S: { id: 0, name: 'S', number: 2 }, M: { id: 1, name: 'M', number: 5 }, L: { id: 2, name: 'L', number: 6, } } },
-            },
-            images: [
-                '../image/products/product-3(white).png',
+            variants: [
+                {
+                    id: 0,
+                    key: 'beige',
+                    name: '米色',
+                    hex: '#EDE8D0',
+                    stock: { S: 2, M: 0, L: 1 },
+                    images: [
+                        '../image/products/product-3(beige-1).png',
+                        '../image/products/product-3(beige-2).png',
+                        '../image/products/product-3(beige-3).png',
+                        '../image/products/product-3(beige-4).png',
+                        '../image/products/product-3(beige-5).png',
+                        '../image/products/product-3(beige-6).png',
+                        '../image/products/product-3(beige-7).png',
+                        '../image/products/product-3(beige-8).png',
+                        '../image/products/product-3(beige-9).png',
+                        '../image/products/product-3(beige-10).png',
+                        '../image/products/product-3(beige-11).png',
+                    ]
+                },
+                {
+                    id: 1,
+                    key: 'ivory',
+                    name: '象牙黃',
+                    hex: '#FFFFE3',
+                    stock: { S: 4, M: 1, L: 0 },
+                    images: [
+                        '../image/products/product-3(ivory-1).png',
+                    ]
+                },
+                {
+                    id: 2,
+                    key: 'black',
+                    name: '黑色',
+                    hex: '#000000',
+                    stock: { S: 3, M: 2, L: 5 },
+                    images: [
+                        '../image/products/product-3(black-1).png',
+
+                    ]
+                },
             ]
         },
         {
-            id: 4, name: '條紋緊身胸衣背心', price: { original: '990元', sale: '689元', discount: '70%' },
+            id: 4, name: '條紋緊身胸衣背心', price: { original: 990, sale: 689, discount: 70 },
             desc: '貼身剪裁勾勒上身線條，條紋元素在視覺上更顯修身。布料帶有彈性，穿著舒適不緊繃。單穿展現率性性感風格，外搭襯衫或外套又能平衡整體造型，層次感十足。',
+            variants: [
+                {
+                    id: 0,
+                    key: 'white',
+                    name: '白色',
+                    hex: '#EDE8D0',
+                    stock: { S: 7, M: 6, L: 5 },
+                    images: [
+                        '../image/products/product-4(white-1).png',
+                        '../image/products/product-4(white-2).png',
+                        '../image/products/product-4(white-3).png',
+                        '../image/products/product-4(white-4).png',
+                        '../image/products/product-4(white-5).png',
+                        '../image/products/product-4(white-6).png',
+                        '../image/products/product-4(white-7).png',
+                        '../image/products/product-4(white-8).png',
+                        '../image/products/product-4(white-9).png',
+                        '../image/products/product-4(white-10).png',
+                    ]
+                }, {
+                    id: 1,
+                    key: 'black',
+                    name: '黑色',
+                    hex: 'black',
+                    stock: { S: 0, M: 0, L: 0 },
+                    images: [
+                        '../image/products/product-4(black-1).png',
+                    ]
+                }, {
+                    id: 2,
+                    key: 'gray',
+                    name: '灰色',
+                    hex: 'gray',
+                    stock: { S: 0, M: 0, L: 0 },
+                    images: [
+                        '../image/products/product-4(gray-1).png',
+                    ]
+                }, {
+                    id: 3,
+                    key: 'red',
+                    name: '紅色',
+                    hex: '#ff0000',
+                    stock: { S: 0, M: 0, L: 0 },
+                    images: [
+                        '../image/products/product-4(red-1).png',
+                    ]
+                }, {
+                    id: 4,
+                    key: 'blue',
+                    name: '藍色',
+                    hex: 'blue',
+                    stock: { S: 0, M: 0, L: 0 },
+                    images: [
+                        '../image/products/product-4(blue-1).png',
+                    ]
+                }, {
+                    id: 5,
+                    key: 'green',
+                    name: '綠色',
+                    hex: 'green',
+                    stock: { S: 0, M: 0, L: 0 },
+                    images: [
+                        '../image/products/product-4(green-1).png',
+                    ]
+                }, {
+                    id: 6,
+                    key: 'yellow',
+                    name: '黃色',
+                    hex: 'yellow',
+                    stock: { S: 0, M: 0, L: 0 },
+                    images: [
+                        '../image/products/product-4(yellow-1).png',
+                    ]
+                },
+            ]
         },
         {
             id: 5, name: '簡約無袖節慶短上衣', price: { original: '990元', sale: '599元', discount: '60%' },
@@ -288,55 +407,74 @@ document.addEventListener('DOMContentLoaded', function () {
     // 1號用 variants，其它用 images
     const images = product.variants
         ? product.variants.flatMap(v => v.images)
-        : (product.images || [])
+        : (product.images || []);
 
-    const carousel = document.querySelector('.product__carousel')
-    carousel.innerHTML = images.map(src =>
-        `<img class="product__item" src="${src}" alt="">`
-    ).join('')
+    const carousel = document.querySelector('.product__carousel');
 
-    const thumbs = [...document.querySelectorAll('.product__item')]
-    const mainImg = document.querySelector('.product__image')
-    const next = document.querySelector('.gallery__button--next')
-    const prev = document.querySelector('.gallery__button--prev')
-
+    // RWD group size
     const mq = window.matchMedia('(max-width: 1320px)');
     let GROUP_SIZE = mq.matches ? 4 : 6;
-    let current = 0
-    let group = 0
+
+    // 補空白圖
+    function buildImages() {
+        const remainder = images.length % GROUP_SIZE;
+        const pad = remainder === 0 ? 0 : GROUP_SIZE - remainder;
+        return [...images, ...Array(pad).fill(null)];
+    }
+
+    let allImages = buildImages();
+
+    carousel.innerHTML = allImages.map(src =>
+        src
+            ? `<img class="product__item" src="${src}">`
+            : `<img class="product__item is-empty">`
+    ).join('');
+
+    const thumbs = [...document.querySelectorAll('.product__item')];
+    const mainImg = document.querySelector('.product__image');
+    const next = document.querySelector('.gallery__button--next');
+    const prev = document.querySelector('.gallery__button--prev');
+
+    let current = 0;
+    let group = 0;
 
     mq.addEventListener('change', e => {
         GROUP_SIZE = e.matches ? 4 : 6;
-        render()
+        allImages = buildImages();
+        group = Math.floor(current / GROUP_SIZE);
+        render();
     });
 
     function render() {
-        mainImg.src = thumbs[current].src
+        mainImg.src = thumbs[current]?.src || mainImg.src;
         thumbs.forEach((img, i) => {
-            img.classList.toggle('is-active', i === current)
-            img.style.display = Math.floor(i / GROUP_SIZE) === group ? 'block' : 'none'
-        })
+            img.classList.toggle('is-active', i === current);
+            img.style.display =
+                Math.floor(i / GROUP_SIZE) === group ? 'block' : 'none';
+        });
     }
 
     thumbs.forEach((img, i) => {
+        if (img.classList.contains('is-empty')) return;
         img.addEventListener('click', () => {
-            current = i
-            group = Math.floor(i / GROUP_SIZE)
-            render()
-        })
-    })
+            current = i;
+            group = Math.floor(i / GROUP_SIZE);
+            render();
+        });
+    });
 
     next.addEventListener('click', () => {
-        current = (current + 1) % thumbs.length
-        group = Math.floor(current / GROUP_SIZE)
-        render()
-    })
+        current = (current + 1) % images.length;
+        group = Math.floor(current / GROUP_SIZE);
+        render();
+    });
 
     prev.addEventListener('click', () => {
-        current = (current - 1 + thumbs.length) % thumbs.length
-        group = Math.floor(current / GROUP_SIZE)
-        render()
-    })
+        current = (current - 1 + images.length) % images.length;
+        group = Math.floor(current / GROUP_SIZE);
+        render();
+    });
 
-    render()
+    render();
+
 })

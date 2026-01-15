@@ -1,7 +1,7 @@
 .header {
     order: -1;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.30) 0%, rgba(56, 56, 56, 0.23) 49%, rgba(230, 230, 230, 0.00) 100%);
-    width: 100%;
+    width: 100vw;
     z-index: 99;
     position: fixed;
 }
@@ -12,6 +12,8 @@
 .header--solid {
     background: none;
     background-color: #F6F4EE;
+    border-bottom: 1px solid #999;
+
 }
 
 .header .nav__list {

@@ -1,5 +1,7 @@
 .swiper--hero {
     position: relative;
+    width: 100vw;
+    overflow: hidden
 }
 
 .swiper--hero .swiper__track {
@@ -65,10 +67,13 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 8px;
+    user-select: none;
+
 }
 
 .swiper--hero .swiper__dot {
     cursor: pointer;
+    user-select: none;
     padding: 7px;
     border: none;    background-color: #A49694;
     border-radius: 90px;

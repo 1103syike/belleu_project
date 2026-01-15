@@ -37,6 +37,7 @@
 }
 
 .store__app {
+    user-select: none;
     display: flex;
     flex-direction: row;
     gap: 50px;

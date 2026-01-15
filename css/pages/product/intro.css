@@ -18,9 +18,9 @@
     width: 45vw;
     height: 100vh;
     object-fit: cover;
-
     margin: 0;
     padding: 0;
+    
 }
 
 .product__info {
@@ -68,7 +68,11 @@
     font-size: 24px;
 }
 
+.product__price--original{
+    user-select: none;
+}
 .product__event {
+    user-select: none;
     margin-top: 10px;
 }
 
@@ -87,7 +91,7 @@
     margin-top: 10px;
     color: #4B4237;
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 .product__colors {
@@ -104,6 +108,7 @@
 }
 
 .product__stock {
+    user-select: none;
     color: #4B4237;
     font-size: 16px;
 }
@@ -223,6 +228,7 @@
 }
 
 .product__selected {
+    user-select: none;
     display: flex;
     margin-left: auto;
 }
@@ -265,9 +271,16 @@
 }
 
 .product__item {
+    transition: filter 0.4s ease;
     width: calc(100% / 6);
     box-sizing: border-box;
     border: 1px solid white;
+    filter: grayscale(100%);
+}
+
+.is-empty {
+    background-color: gray;
+    opacity: 30%;
 }
 
 .gallery__button {
@@ -281,9 +294,10 @@
     transform: translateY(-100%);
 }
 
-.gallery__button:hover{
+.gallery__button:hover {
     color: #4B4237;
 }
+
 /* #4B4237 */
 
 .gallery__button--next {
@@ -296,12 +310,12 @@
 }
 
 .product__item.is-active {
-    border: 2px solid red;
+    filter: grayscale(0);
+
 }
 
 .product__carousel {
     display: none;
-    ;
 }
 
 @media screen and (max-width: 1600px) {
@@ -315,7 +329,6 @@
         height: calc(100vh - 80px);
     }
 
-    .product__image {}
 }
 
 @media screen and (max-width: 1320px) {
@@ -352,33 +365,36 @@
         width: 100vw;
         height: 100vw;
     }
+
     .product__image {
         width: 100%;
         height: 100%;
     }
+
     .product__carousel {
         display: none;
     }
 
-    .product__info{
+    .product__info {
         margin-top: 20px;
         width: 75vw;
         padding: 0;
         margin-bottom: 50px;
     }
-    .gallery__button--prev{
+
+    .gallery__button--prev {
         left: 20px;
     }
 
-    .gallery__button--next{
-        right:20px;
+    .gallery__button--next {
+        right: 20px;
     }
 }
 
 @media screen and (max-width: 980px) {
 
 
-    .product__info{
+    .product__info {
         margin-top: 20px;
         width: 80vw;
         padding: 0;
