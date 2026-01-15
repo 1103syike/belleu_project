@@ -1,7 +1,16 @@
 .swiper--hero,
-.swiper--hero .swiper-slide,
-.swiper--hero .swiper__img {
+.swiper--hero .swiper-slide {
     width: 100%;
+}
+
+
+.swiper--hero .swiper__img--right {
+    width: 31.25%;
+}
+
+.swiper--hero .swiper__img--left {
+    width: 68.75%;
+    height: auto;
 }
 
 .swiper--hero .swiper-slide {
@@ -12,6 +21,11 @@
     .swiper--hero .swiper__img--right {
         display: none;
     }
+
+    .swiper--hero .swiper__img--left {
+        display: block;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 980px) {
@@ -21,6 +35,11 @@
 
     .swiper--hero .swiper__img--right {
         display: block;
+        width: 100%;
+    }
+
+    .swiper-button {
+        display: none;
     }
 
 }
