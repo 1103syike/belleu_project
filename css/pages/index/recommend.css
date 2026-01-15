@@ -22,6 +22,7 @@
 .recommend__list {
     display: flex;
     width: 80vw;
+    justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 4vw calc(8vw / 5);
@@ -84,4 +85,28 @@
 
 .recommend__btn:hover {
     background-color: #ddd;
+}
+
+
+@media screen and (max-width: 980px) {
+    .recommend {
+        padding: 100px 0;
+    }
+
+    .recommend__list {
+        width: 90vw;
+    }
+    /* .recommend .product-card {
+        width: 40vw;
+    }
+
+    .recommend .product-card__img {
+        width: 40vw;
+    }
+    
+    .recommend .product-card__mask{
+        width: 40vw;
+        height: 5px;
+        background-color: rebeccapurple;
+    } */
 }

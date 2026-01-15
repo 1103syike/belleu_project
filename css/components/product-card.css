@@ -86,3 +86,19 @@
 .product-card__amount {
     font-size: 18px;
 }
+
+@media screen and (max-width: 980px) {
+
+    .product-card {
+        width: 40vw;
+    }
+
+    .product-card__img {
+        width: 40vw;
+    }
+    
+    .product-card__mask{
+        width: 40vw;
+        height: 40vw;
+    }
+}

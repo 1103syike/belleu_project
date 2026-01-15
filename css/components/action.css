@@ -11,19 +11,27 @@
     user-select: none;
     cursor: pointer;
     background: none;
+    color: #736B60;
     border: 1px solid gray;
 }
 
-.action__btn--add-cart:hover{
+.action__btn--add-cart:hover {
     background-color: #736B60;
     color: white;
     border: 1px solid #736B60;
 
 }
 
-.action__btn--checkout:hover{
+.action__btn--checkout:hover {
     color: white;
     border: 1px solid #4B4237;
     background-color: #4B4237;
 }
 
+@media screen and (max-width: 980px) {
+
+    .action__btn {
+        font-size: 18px;
+
+    }
+}

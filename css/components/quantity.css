@@ -24,7 +24,7 @@
     outline: none;
 }
 
-.quantity:focus-within{
+.quantity:focus-within {
     border: 1px solid black;
 }
 
@@ -35,7 +35,19 @@
     background: none;
     border: none;
 }
-.quantity__btn:hover{
+
+.quantity__btn:hover {
     color: #4B4237;
 
+}
+
+@media screen and (max-width: 980px) {
+
+    .quantity__input {
+        font-size: 22px;
+    }
+
+    .quantity__btn {
+        font-size: 22px;
+    }
 }

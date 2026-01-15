@@ -9,13 +9,23 @@
     user-select: none;
     cursor: pointer;
     padding: 8px;
+    width: 35px;
+    height: 35px;
     box-sizing: border-box;
     background: none;
     border: 1px solid transparent;
+
+}
+.size-list__block:disabled{
+    color: gray;
+    opacity: 10;
+      pointer-events: none;
 }
 
 .size-list__size {
+    font-size: 16px;
     line-height: 100%;
+
 }
 
 .size-list__name {
@@ -26,4 +36,9 @@
 
 .size-list__item--active .size-list__block {
     border: 1px solid black;
+}
+
+@media screen and (max-width: 980px) {
+
+
 }

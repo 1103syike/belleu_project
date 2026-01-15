@@ -75,13 +75,24 @@
     cursor: pointer;
     user-select: none;
     padding: 7px;
-    border: none;    background-color: #A49694;
+    border: none;
+    background-color: #A49694;
     border-radius: 90px;
 }
-.swiper--hero .swiper__dot:hover{
+
+.swiper--hero .swiper__dot:hover {
     background-color: #4B4237;
 
 }
-.swiper--hero .swiper__dot--active{
+
+.swiper--hero .swiper__dot--active {
     background-color: #4B4237;
+}
+
+@media screen and (max-width: 980px) {
+
+    .swiper__img {
+        height: 30vh;
+        object-fit:cover;
+    }
 }
