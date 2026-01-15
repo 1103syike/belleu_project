@@ -152,9 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('.swiper--hero .swiper__btn')
-  .forEach(btn => {
-    btn.addEventListener('touchend', e => {
-      e.preventDefault()
-    }, { passive: false })
-  })
+    .forEach(btn => {
+      btn.addEventListener('touchend', e => {
+        e.preventDefault()
+      }, { passive: false })
+    })
+
+
+
 })

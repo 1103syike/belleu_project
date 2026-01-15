@@ -1,0 +1,25 @@
+.swiper--hero,
+.swiper--hero .swiper-slide,
+.swiper--hero .swiper__img {
+    width: 100%;
+}
+
+.swiper--hero .swiper-slide {
+    display: flex;
+}
+
+@media screen and (max-width: 1300px) {
+    .swiper--hero .swiper__img--right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .swiper--hero .swiper__img--left {
+        display: none;
+    }
+        .swiper--hero .swiper__img--right {
+        display: block;
+    }
+    
+}

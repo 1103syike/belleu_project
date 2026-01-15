@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="./css/pages/index.css">
     <script defer src="./js/pages/index/product_recommend.js"></script>
-    <script defer src="./js/pages/index/swiper.js"></script>
+    <!-- <script defer src="./js/pages/index/swiper.js"></script> -->
+    <script defer src="./js/pages/index/swiper--hero.js"></script>
     <script defer src="./js/components/header.js"></script>
     <script defer src="./js/components/footer.js"></script>
 </head>
@@ -22,56 +25,16 @@
 <body data-header="hero">
     <!-- marquee -->
     <div class="marquee">下載app隨時領取最新優惠資訊!</div>
-    <!-- <header class="header header--hero">
-        <nav class="nav" style="display: none;">
-            <ul class="nav__list">
-                <li class="nav__item "><a class="nav__link nav__link--logo" href="/index.html">BELLEU</a></li>
-                <li class="nav__item "><a class="nav__link" href="">熱門商品</a></li>
-                <li class="nav__item "><a class="nav__link" href="">最新商品</a></li>
-                <li class="nav__item "><a class="nav__link" href="">買一送一</a></li>
-                <li class="nav__item "><a class="nav__link" href="">所有商品</a></li>
-                <li class="nav__item "><a class="nav__link" href="">登入</a></li>
-                <li class="nav__item "><a class="nav__link" href="">註冊</a></li>
-            </ul>
-        </nav>
-        <nav class="mobile-nav">
-            <ul class="mobile-nav__list">
 
-                <li class="mobile-nav__item "><a class="mobile-nav__link mobile-nav__link--logo"
-                        href="/index.html">BELLEU</a></li>
-                <li class="mobile-nav__item ">
-                    <button class="mobile-nav__hamburger">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-        <div class="hamburger__mask"></div>
-
-        <nav class="hamburger">
-            <ul class="hamburger__list">
-                <li class="hamburger__item "><a class="hamburger__link" href="">熱門商品</a></li>
-                <li class="hamburger__item "><a class="hamburger__link" href="">最新商品</a></li>
-                <li class="hamburger__item "><a class="hamburger__link" href="">買一送一</a></li>
-                <li class="hamburger__item "><a class="hamburger__link" href="">所有商品</a></li>
-                <li class="hamburger__item "><a class="hamburger__link" href="">登入</a></li>
-                <li class="hamburger__item "><a class="hamburger__link" href="">註冊</a></li>
-            </ul>
-        </nav>
-    </header> -->
     <!-- Swiper -->
-    <section class="swiper swiper--hero">
-        <div class="swiper__track">
-            <img class="swiper__img swiper__img--current" src="./image/page/index/swiper/swiper(1).png">
-            <div class="swiper__mask"></div>
-            <img class="swiper__img swiper__img--prev">
-            <img class="swiper__img swiper__img--next">
+    <div class="swiper mySwiper swiper--hero">
+        <div class="swiper-wrapper swiper-wrapper--hero">
+
         </div>
-        <button class="swiper__btn swiper__btn--next">▶</button>
-        <button class="swiper__btn swiper__btn--prev">◀</button>
-        <div class="swiper__pagination">
-        </div>
-    </section>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 
     <!-- 關於比露 -->
     <section class="about">

@@ -1,6 +1,7 @@
 @import url("../base/reset.css");
 @import url("../base/style.css");
-@import url("../pages/index/swiper.css");
+/* @import url("../pages/index/swiper.css"); */
+@import url("../pages/index/swiper--hero.css");
 @import url("../pages/index/about.css");
 @import url("../pages/index/recommend.css");
 @import url("../pages/index/store.css");
@@ -9,4 +10,6 @@
 @import url("../components/product-card.css");
 @import url("../components/footer.css");
 
-@media screen and (max-width: 1320px){}
+body{
+    width: 100%;
+}
