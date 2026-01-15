@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#B20E30',
                     stock: { S: 2, M: 5, L: 6 },
                     images: [
-                        '../image/products/product-1(red).png',
-                        '../image/products/product-1(red-2).png'
+                        './image/products/product-1(red).png',
+                        './image/products/product-1(red-2).png'
                     ]
                 },
                 {
@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#3B4A6B',
                     stock: { S: 5, M: 3, L: 5 },
                     images: [
-                        '../image/products/product-1(blue).png',
-                        '../image/products/product-1(blue-2).png',
+                        './image/products/product-1(blue).png',
+                        './image/products/product-1(blue-2).png',
                     ]
                 },
                 {
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#23413F',
                     stock: { S: 3, M: 4, L: 3 },
                     images: [
-                        '../image/products/product-1(green).png',
-                        '../image/products/product-1(green-2).png',
+                        './image/products/product-1(green).png',
+                        './image/products/product-1(green-2).png',
                     ]
                 },
                 {
@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#E3DBD8',
                     stock: { S: 4, M: 1, L: 2 },
                     images: [
-                        '../image/products/product-1(oatmeal).png',
-                        '../image/products/product-1(oatmeal-2).png'
+                        './image/products/product-1(oatmeal).png',
+                        './image/products/product-1(oatmeal-2).png'
                     ]
                 },
                 {
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#C1BFC0',
                     stock: { S: 8, M: 0, L: 0 },
                     images: [
-                        '../image/products/product-1(gray).png',
-                        '../image/products/product-1(gray-2).png'
+                        './image/products/product-1(gray).png',
+                        './image/products/product-1(gray-2).png'
                     ]
                 }
             ]
@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#EDE8D0',
                     stock: { S: 3, M: 5, L: 7 },
                     images: [
-                        '../image/products/product-2(beige-1).png',
-                        '../image/products/product-2(beige-2).png',
-                        '../image/products/product-2(beige-3).png',
-                        '../image/products/product-2(beige-4).png',
+                        './image/products/product-2(beige-1).png',
+                        './image/products/product-2(beige-2).png',
+                        './image/products/product-2(beige-3).png',
+                        './image/products/product-2(beige-4).png',
                     ]
                 },
             ]
@@ -91,17 +91,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#EDE8D0',
                     stock: { S: 2, M: 0, L: 1 },
                     images: [
-                        '../image/products/product-3(beige-1).png',
-                        '../image/products/product-3(beige-2).png',
-                        '../image/products/product-3(beige-3).png',
-                        '../image/products/product-3(beige-4).png',
-                        '../image/products/product-3(beige-5).png',
-                        '../image/products/product-3(beige-6).png',
-                        '../image/products/product-3(beige-7).png',
-                        '../image/products/product-3(beige-8).png',
-                        '../image/products/product-3(beige-9).png',
-                        '../image/products/product-3(beige-10).png',
-                        '../image/products/product-3(beige-11).png',
+                        './image/products/product-3(beige-1).png',
+                        './image/products/product-3(beige-2).png',
+                        './image/products/product-3(beige-3).png',
+                        './image/products/product-3(beige-4).png',
+                        './image/products/product-3(beige-5).png',
+                        './image/products/product-3(beige-6).png',
+                        './image/products/product-3(beige-7).png',
+                        './image/products/product-3(beige-8).png',
+                        './image/products/product-3(beige-9).png',
+                        './image/products/product-3(beige-10).png',
+                        './image/products/product-3(beige-11).png',
                     ]
                 },
                 {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#FFFFE3',
                     stock: { S: 4, M: 1, L: 0 },
                     images: [
-                        '../image/products/product-3(ivory-1).png',
+                        './image/products/product-3(ivory-1).png',
                     ]
                 },
                 {
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#000000',
                     stock: { S: 3, M: 2, L: 5 },
                     images: [
-                        '../image/products/product-3(black-1).png',
+                        './image/products/product-3(black-1).png',
 
                     ]
                 },
@@ -138,16 +138,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#EDE8D0',
                     stock: { S: 7, M: 6, L: 5 },
                     images: [
-                        '../image/products/product-4(white-1).png',
-                        '../image/products/product-4(white-2).png',
-                        '../image/products/product-4(white-3).png',
-                        '../image/products/product-4(white-4).png',
-                        '../image/products/product-4(white-5).png',
-                        '../image/products/product-4(white-6).png',
-                        '../image/products/product-4(white-7).png',
-                        '../image/products/product-4(white-8).png',
-                        '../image/products/product-4(white-9).png',
-                        '../image/products/product-4(white-10).png',
+                        './image/products/product-4(white-1).png',
+                        './image/products/product-4(white-2).png',
+                        './image/products/product-4(white-3).png',
+                        './image/products/product-4(white-4).png',
+                        './image/products/product-4(white-5).png',
+                        './image/products/product-4(white-6).png',
+                        './image/products/product-4(white-7).png',
+                        './image/products/product-4(white-8).png',
+                        './image/products/product-4(white-9).png',
+                        './image/products/product-4(white-10).png',
                     ]
                 }, {
                     id: 1,
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: 'black',
                     stock: { S: 0, M: 0, L: 0 },
                     images: [
-                        '../image/products/product-4(black-1).png',
+                        './image/products/product-4(black-1).png',
                     ]
                 }, {
                     id: 2,
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: 'gray',
                     stock: { S: 0, M: 0, L: 0 },
                     images: [
-                        '../image/products/product-4(gray-1).png',
+                        './image/products/product-4(gray-1).png',
                     ]
                 }, {
                     id: 3,
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: '#ff0000',
                     stock: { S: 0, M: 0, L: 0 },
                     images: [
-                        '../image/products/product-4(red-1).png',
+                        './image/products/product-4(red-1).png',
                     ]
                 }, {
                     id: 4,
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: 'blue',
                     stock: { S: 0, M: 0, L: 0 },
                     images: [
-                        '../image/products/product-4(blue-1).png',
+                        './image/products/product-4(blue-1).png',
                     ]
                 }, {
                     id: 5,
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: 'green',
                     stock: { S: 0, M: 0, L: 0 },
                     images: [
-                        '../image/products/product-4(green-1).png',
+                        './image/products/product-4(green-1).png',
                     ]
                 }, {
                     id: 6,
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     hex: 'yellow',
                     stock: { S: 0, M: 0, L: 0 },
                     images: [
-                        '../image/products/product-4(yellow-1).png',
+                        './image/products/product-4(yellow-1).png',
                     ]
                 },
             ]
