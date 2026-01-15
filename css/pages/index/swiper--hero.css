@@ -18,8 +18,9 @@
     .swiper--hero .swiper__img--left {
         display: none;
     }
-        .swiper--hero .swiper__img--right {
+
+    .swiper--hero .swiper__img--right {
         display: block;
     }
-    
+
 }

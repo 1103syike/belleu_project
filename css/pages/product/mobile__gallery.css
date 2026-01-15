@@ -104,7 +104,9 @@
     color: red;
 }
 @media screen and (max-width: 1060px) {
-
+.mobile-gallery__btn{
+    display: none;
+}
     .mobile-gallery__slide,
     .mobile-gallery__wrapper,
     .mobile-gallery__main,
