@@ -6,6 +6,7 @@
 @import url("../components/quantity.css");
 @import url("../components/action.css");
 @import url("../pages/product/intro.css");
+@import url("../pages/product/mobile__gallery.css");
 @import url("../components/footer.css");
 
 .header-block{

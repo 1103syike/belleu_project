@@ -262,79 +262,59 @@ document.addEventListener('DOMContentLoaded', function () {
     const productId = Number(localStorage.getItem('product_id')) || 1
     const product = products.find(p => p.id === productId) || products[0]
 
-    // ===== 1) DOM 快取 =====
-    const $ = (sel) => document.querySelector(sel)
+    // ===== 1) DOM =====
+    const $ = (s) => document.querySelector(s)
     const productTitle = $('.product__title')
     const productPriceSale = $('.product__price--sale')
     const productPriceOriginal = $('.product__price--original')
     const productDesc = $('.product__desc')
+
     const colorList = $('.color-list')
     const sizeList = $('.size-list')
-    const productImage = $('.product__image')
+
     const productStock = $('.product__stock')
     const quantityBtnMinus = $('.quantity__btn--minus')
     const quantityBtnPlus = $('.quantity__btn--plus')
     const quantityInput = $('.quantity__input')
 
-    // ===== 2) 狀態（只用 key，不用 index）=====
-    let selectedColorKey = product.variants[0].key
-    let selectedSizeKey = Object.keys(product.variants[0].stock)[0]
+    // ✅ 你說的：<p class="product__selected"></p>
+    const productSelected = $('.product__selected')
 
-    // ===== 3) 基本資料渲染 =====
+    // ✅ Swiper（照你貼的 HTML）
+    const mainEl = document.querySelector('.mobile-gallery .mySwiper2')
+    const thumbsEl = document.querySelector('.mobile-gallery .mySwiper')
+
+    if (!mainEl || !thumbsEl) {
+        console.error('找不到 Swiper 容器：.mySwiper2 / .mySwiper')
+        return
+    }
+
+    // ===== 2) 狀態（先預設第一個）=====
+    let selectedColorKey = product.variants?.[0]?.key
+    let selectedSizeKey = Object.keys(product.variants?.[0]?.stock || {})[0]
+
+    // ===== 3) localStorage 還原（你要的 active 不消失）=====
+
+
+    // ===== 4) 基本資料渲染 =====
     productTitle.textContent = product.name
     productPriceSale.textContent = `${product.price.sale}元`
     productPriceOriginal.textContent = `${product.price.original}元`
     productDesc.textContent = product.desc
 
-    // ===== 4) UI 生成（顏色、尺寸）=====
-    renderColorList()
-    renderSizeList()
-    renderSelectedTags()
-    syncUI()
-
-    // ===== 5) 事件（委派：不用 for 迴圈綁一堆）=====
-    colorList.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-color]')
-        if (!btn) return
-        selectedColorKey = btn.dataset.color
-        // 換色後尺寸預設選第一個可用（你也可改成保留原尺寸）
-        selectedSizeKey = firstSizeKey(getVariant(selectedColorKey).stock)
-        syncUI()
-    })
-
-    sizeList.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-size]')
-        if (!btn || btn.disabled) return
-        selectedSizeKey = btn.dataset.size
-        syncUI()
-    })
-
-    quantityBtnMinus.addEventListener('click', () => {
-        quantityInput.value = Math.max(1, Number(quantityInput.value) - 1)
-    })
-
-    quantityBtnPlus.addEventListener('click', () => {
-        const stock = getStock()
-        const cur = Number(quantityInput.value)
-        if (stock <= 0) return (quantityInput.value = 0)
-        quantityInput.value = Math.min(stock, Math.max(1, cur + 1))
-    })
-
-    // ===== functions =====
-
+    // ===== 5) functions：商品/庫存 =====
     function getVariant(colorKey) {
         return product.variants.find(v => v.key === colorKey)
     }
-
+    function getStock() {
+        const v = getVariant(selectedColorKey)
+        return v?.stock?.[selectedSizeKey] ?? 0
+    }
     function firstSizeKey(stockObj) {
         return Object.keys(stockObj)[0]
     }
 
-    function getStock() {
-        const v = getVariant(selectedColorKey)
-        return v.stock[selectedSizeKey] ?? 0
-    }
-
+    // ===== 6) UI：顏色/尺寸 =====
     function renderColorList() {
         colorList.innerHTML = product.variants.map(v => `
       <li class="color-list__item">
@@ -356,125 +336,136 @@ document.addEventListener('DOMContentLoaded', function () {
     `).join('')
     }
 
-    function renderSelectedTags() {
-        // 避免每次 append 重複
-        let selected = colorList.querySelector('.product__selected')
-        if (!selected) {
-            selected = document.createElement('div')
-            selected.className = 'product__selected'
-            selected.innerHTML = `
-        <p class="color-list__name"></p>
-        <p class="size-list__name"></p>
-      `
-            colorList.appendChild(selected)
-        }
-    }
+    // ===== 7) 一套 Carousel DB（一次輪播全部顏色所有圖）=====
+    const carouselDB = product.variants.flatMap(v =>
+        (v.images || []).map(src => ({ src, colorKey: v.key }))
+    )
 
+    // 塞 slides（只做一次）
+    const mainWrap = mainEl.querySelector('.swiper-wrapper')
+    const thumbsWrap = thumbsEl.querySelector('.swiper-wrapper')
+
+    mainWrap.innerHTML = carouselDB.map(it => `
+    <div class="swiper-slide" data-color="${it.colorKey}">
+      <img class="mobile-gallery__image" src="${it.src}" alt="">
+    </div>
+  `).join('')
+
+    thumbsWrap.innerHTML = carouselDB.map(it => `
+    <div class="swiper-slide" data-color="${it.colorKey}">
+      <img class="mobile-gallery__thumb" src="${it.src}" alt="">
+    </div>
+  `).join('')
+
+    // ===== 8) Swiper 初始化
+    const thumbsSwiper = new Swiper(thumbsEl, {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        spaceBetween: 10,
+        freeMode: false,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+    })
+
+    const mainSwiper = new Swiper(mainEl, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '.mobile-gallery__btn--next',
+            prevEl: '.mobile-gallery__btn--prev',
+        },
+        thumbs: { swiper: thumbsSwiper },
+    })
+
+    // ===== 9) 核心：同步 UI + localStorage + Swiper =====
     function syncUI() {
         const v = getVariant(selectedColorKey)
+        if (!v) return
 
-        // 1) active 樣式
+        // color active（照你原本 class）
         colorList.querySelectorAll('[data-color]').forEach(btn => {
             btn.closest('.color-list__item')
                 .classList.toggle('color-list__item--active', btn.dataset.color === selectedColorKey)
         })
 
-        // 尺寸要依顏色重畫（因為不同顏色庫存不同）
+        // size 重畫 + active（照你原本 class）
         renderSizeList()
         sizeList.querySelectorAll('[data-size]').forEach(btn => {
             btn.closest('.size-list__item')
                 .classList.toggle('size-list__item--active', btn.dataset.size === selectedSizeKey)
         })
 
-        // 2) 顯示文字
+        // 
+        if (productSelected) productSelected.textContent = `${v.name} / ${selectedSizeKey}`
+
         colorList.querySelector('.color-list__name').textContent = v.name
         colorList.querySelector('.size-list__name').textContent = selectedSizeKey
 
-        // 3) 圖片：用該色第一張（多角度在 v.images）
-        productImage.src = v.images[0]
-
-        // 4) 庫存/數量
+        // 庫存/數量
         const stock = getStock()
         productStock.textContent = `庫存:${stock}`
         quantityInput.value = stock > 0 ? 1 : 0
 
-        // 5) 存起來（你原本就有在存）
+        // 
         localStorage.setItem('所選擇商品顏色', selectedColorKey)
         localStorage.setItem('所選擇商品尺寸', selectedSizeKey)
         localStorage.setItem('商品庫存', stock)
+
+        // Swiper：跳到該顏色第一張
+        const idx = carouselDB.findIndex(it => it.colorKey === selectedColorKey)
+        if (idx >= 0) {
+            mainSwiper.slideTo(idx, 0)
+            thumbsSwiper.slideTo(Math.max(0, idx - 1), 0) // 縮圖稍微往前露一格
+        }
     }
 
-    // 1號用 variants，其它用 images
-    const images = product.variants
-        ? product.variants.flatMap(v => v.images)
-        : (product.images || []);
-
-    const carousel = document.querySelector('.product__carousel');
-
-    // RWD group size
-    const mq = window.matchMedia('(max-width: 1320px)');
-    let GROUP_SIZE = mq.matches ? 4 : 6;
-
-    // 補空白圖
-    function buildImages() {
-        const remainder = images.length % GROUP_SIZE;
-        const pad = remainder === 0 ? 0 : GROUP_SIZE - remainder;
-        return [...images, ...Array(pad).fill(null)];
+    function renderSelectedTags() {
+        let selected = colorList.querySelector('.product__selected')
+        if (!selected) {
+            selected = document.createElement('div')
+            selected.className = 'product__selected'
+            selected.innerHTML = `
+      <p class="color-list__name"></p>
+      <p class="size-list__name"></p>
+    `
+            colorList.appendChild(selected)
+        }
     }
 
-    let allImages = buildImages();
+    // ===== 10) 事件（委派）=====
+    renderColorList()
+    renderSelectedTags()
+    syncUI()
 
-    carousel.innerHTML = allImages.map(src =>
-        src
-            ? `<img class="product__item" src="${src}">`
-            : `<img class="product__item is-empty">`
-    ).join('');
+    colorList.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-color]')
+        if (!btn) return
+        selectedColorKey = btn.dataset.color
+        selectedSizeKey = firstSizeKey(getVariant(selectedColorKey).stock)
+        syncUI()
+    })
 
-    const thumbs = [...document.querySelectorAll('.product__item')];
-    const mainImg = document.querySelector('.product__image');
-    const next = document.querySelector('.gallery__button--next');
-    const prev = document.querySelector('.gallery__button--prev');
+    sizeList.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-size]')
+        if (!btn || btn.disabled) return
+        selectedSizeKey = btn.dataset.size
+        syncUI()
+    })
 
-    let current = 0;
-    let group = 0;
+    quantityBtnMinus.addEventListener('click', () => {
+        quantityInput.value = Math.max(1, Number(quantityInput.value) - 1)
+    })
 
-    mq.addEventListener('change', e => {
-        GROUP_SIZE = e.matches ? 4 : 6;
-        allImages = buildImages();
-        group = Math.floor(current / GROUP_SIZE);
-        render();
-    });
-
-    function render() {
-        mainImg.src = thumbs[current]?.src || mainImg.src;
-        thumbs.forEach((img, i) => {
-            img.classList.toggle('is-active', i === current);
-            img.style.display =
-                Math.floor(i / GROUP_SIZE) === group ? 'block' : 'none';
-        });
-    }
-
-    thumbs.forEach((img, i) => {
-        if (img.classList.contains('is-empty')) return;
-        img.addEventListener('click', () => {
-            current = i;
-            group = Math.floor(i / GROUP_SIZE);
-            render();
-        });
-    });
-
-    next.addEventListener('click', () => {
-        current = (current + 1) % images.length;
-        group = Math.floor(current / GROUP_SIZE);
-        render();
-    });
-
-    prev.addEventListener('click', () => {
-        current = (current - 1 + images.length) % images.length;
-        group = Math.floor(current / GROUP_SIZE);
-        render();
-    });
-
-    render();
-
+    quantityBtnPlus.addEventListener('click', () => {
+        const stock = getStock()
+        const cur = Number(quantityInput.value)
+        if (stock <= 0) return (quantityInput.value = 0)
+        quantityInput.value = Math.min(stock, Math.max(1, cur + 1))
+    })
+    // ✅ 每次進頁面都初始化（不吃上次）
+    selectedColorKey = product.variants[0].key
+    selectedSizeKey = Object.keys(product.variants[0].stock)[0]
+    localStorage.removeItem('所選擇商品顏色')
+    localStorage.removeItem('所選擇商品尺寸')
+    localStorage.removeItem('商品庫存')
 })

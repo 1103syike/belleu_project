@@ -1,183 +1,160 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = [
+    { id: 1, name: '輪播圖-1', src: './image/page/index/swiper/swiper(1).png' },
+    { id: 2, name: '輪播圖-2', src: './image/page/index/swiper/swiper(2).png' },
+    { id: 3, name: '輪播圖-3', src: './image/page/index/swiper/swiper(3).png' },
+    { id: 4, name: '輪播圖-4', src: './image/page/index/swiper/swiper(4).png' }
+  ]
 
-    const slides = [
-        { id: 1, name: '輪播圖-1', src: './image/page/index/swiper/swiper(1).png' },
-        { id: 2, name: '輪播圖-2', src: './image/page/index/swiper/swiper(2).png' },
-        { id: 3, name: '輪播圖-3', src: './image/page/index/swiper/swiper(3).png' },
-        { id: 4, name: '輪播圖-4', src: './image/page/index/swiper/swiper(4).png' }
-    ]
+  // ===== 常數 =====
+  const DURATION = 400
+  const INTERVAL = 5000
+  const len = slides.length
 
-    let currentSlideNumber = 0
-    let nextSlideNumber = 1
-    let prevSlideNumber = 3
+  // ===== DOM 快取 =====
+  const currentEl = document.querySelector('.swiper__img--current')
+  const prevEl = document.querySelector('.swiper__img--prev')
+  const nextEl = document.querySelector('.swiper__img--next')
+  const nextBtn = document.querySelector('.swiper__btn--next')
+  const prevBtn = document.querySelector('.swiper__btn--prev')
+  const mask = document.querySelector('.swiper__mask')
+  const pagination = document.querySelector('.swiper__pagination')
 
-    // 捕捉元件的容器。
-    const currentSlide = document.getElementsByClassName("swiper__img--current")[0];
-    const prevSlide = document.getElementsByClassName("swiper__img--prev")[0];
-    const nextSlide = document.getElementsByClassName("swiper__img--next")[0];
+  // ===== 狀態 =====
+  let index = 0
+  let timer = null
+  let isAnimating = false
 
-    // 灌入預設的圖片。
-    currentSlide.src = slides[currentSlideNumber].src;
-    prevSlide.src = slides[prevSlideNumber].src;
-    nextSlide.src = slides[nextSlideNumber].src;
+  // ===== 初始化 dots =====
+  pagination.innerHTML = slides.map((_, i) =>
+    `<button class="swiper__dot" type="button" data-index="${i}"></button>`
+  ).join('')
+  const dots = [...pagination.querySelectorAll('.swiper__dot')]
 
-    // 捕捉按鈕。
-    const next_btn = document.getElementsByClassName('swiper__btn--next')[0];
-    const prev_btn = document.getElementsByClassName('swiper__btn--prev')[0];
+  // ===== 初次渲染 =====
+  renderImages()
+  renderDots()
+  startAutoPlay()
 
+  // ===== 事件 =====
+  nextBtn.addEventListener('click', () => go(1))
+  prevBtn.addEventListener('click', () => go(-1))
 
-    next_btn.addEventListener('click', () => {
-        imgSetting()
-        SlideNumberPlusOne()
-        slideNext()
-        startAutoPlay()
-        renewActiveDot()
-        disabledAddDots()
-        setTimeout(() => {
-            currentImgSetting()
-        }, 400);
+  // dots：事件委派
+  pagination.addEventListener('click', (e) => {
+    const dot = e.target.closest('.swiper__dot')
+    if (!dot) return
+    const target = Number(dot.dataset.index)
+    if (target === index) return
+    jumpTo(target)
+  })
+
+  // ===== 核心動作 =====
+
+  function go(step) {
+    if (isAnimating) return
+    stopAutoPlay()
+
+    // 預載下一張/上一張
+    const target = mod(index + step, len)
+    animate(step, target)
+
+    startAutoPlay()
+  }
+
+  function jumpTo(target) {
+    if (isAnimating) return
+    stopAutoPlay()
+
+    // 決定方向：往前/往後最近路徑（len 小其實無所謂）
+    const forward = mod(target - index, len)
+    const backward = mod(index - target, len)
+    const step = forward <= backward ? 1 : -1
+
+    animate(step, target)
+    startAutoPlay()
+  }
+
+  function animate(step, targetIndex) {
+    isAnimating = true
+    toggleLock(true)
+
+    // 先把目標圖塞到 next 或 prev 那張上
+    if (step === 1) {
+      nextEl.src = slides[targetIndex].src
+      nextEl.style.transition = `transform ${DURATION}ms ease`
+      nextEl.style.transform = 'translateX(0)'
+    } else {
+      prevEl.src = slides[targetIndex].src
+      prevEl.style.transition = `transform ${DURATION}ms ease`
+      prevEl.style.transform = 'translateX(0)'
+    }
+
+    setTimeout(() => {
+      // 動畫結束：更新 index，重置位置，重灌三張圖
+      index = targetIndex
+      resetSidePositions()
+      renderImages()
+      renderDots()
+      toggleLock(false)
+      isAnimating = false
+    }, DURATION)
+  }
+
+  // ===== 渲染 =====
+
+  function renderImages() {
+    const prevIndex = mod(index - 1, len)
+    const nextIndex = mod(index + 1, len)
+
+    currentEl.src = slides[index].src
+    prevEl.src = slides[prevIndex].src
+    nextEl.src = slides[nextIndex].src
+  }
+
+  function renderDots() {
+    dots.forEach((d, i) => {
+      d.classList.toggle('swiper__dot--active', i === index)
+      d.disabled = i === index || isAnimating
     })
-    prev_btn.addEventListener('click', () => {
-        imgSetting()
-        SlideNumberMinusOne()
-        slidePrev()
-        startAutoPlay()
-        renewActiveDot()
-        disabledAddDots()
-        setTimeout(() => {
-            currentImgSetting()
-        }, 400);
-    })
+  }
 
-    function SlideNumberPlusOne() {
-        const len = slides.length
-        currentSlideNumber = (currentSlideNumber + 1) % len
-        prevSlideNumber = (currentSlideNumber - 1 + len) % len
-        nextSlideNumber = (currentSlideNumber + 1) % len
-    }
+  function resetSidePositions() {
+    nextEl.style.transition = 'none'
+    prevEl.style.transition = 'none'
+    nextEl.style.transform = 'translateX(100%)'
+    prevEl.style.transform = 'translateX(-100%)'
+  }
 
-    function SlideNumberMinusOne() {
-        const len = slides.length
-        currentSlideNumber = (currentSlideNumber - 1 + len) % len
-        prevSlideNumber = (currentSlideNumber - 1 + len) % len
-        nextSlideNumber = (currentSlideNumber + 1) % len
-    }
+  // ===== autoplay =====
 
-    // 放置圖片
+  function startAutoPlay() {
+    timer = setTimeout(() => go(1), INTERVAL)
+  }
 
-    function imgSetting() {
-        prevSlide.src = slides[prevSlideNumber].src;
-        nextSlide.src = slides[nextSlideNumber].src;
-    }
+  function stopAutoPlay() {
+    clearTimeout(timer)
+    timer = null
+  }
 
-    function currentImgSetting() {
-        currentSlide.src = slides[currentSlideNumber].src;
-    }
+  // ===== UI lock =====
 
-    const mask = document.getElementsByClassName('swiper__mask')[0];
+  function toggleLock(lock) {
+    nextBtn.disabled = lock
+    prevBtn.disabled = lock
+    if (mask) mask.style.display = lock ? 'block' : 'none'
+    // dots 同步禁用
+    dots.forEach(d => d.disabled = lock || Number(d.dataset.index) === index)
+  }
 
-    // nextSlide滑動特效
-    function slideNext() {
-        nextSlide.style.transform = 'translateX(0)';
-        nextSlide.style.transition = 'transform 0.4s ease';
-        next_btn.disabled = true;
-        prev_btn.disabled = true;
-        mask.style.display = "block";
-        setTimeout(() => {
-            nextSlide.style.transition = 'none';
-            nextSlide.style.transform = 'translateX(100%)';
-            next_btn.disabled = false;
-            prev_btn.disabled = false;
-            mask.style.display = "none";
-        }, 400);
-    }
+  function mod(n, m) {
+    return (n % m + m) % m
+  }
 
-    function slidePrev() {
-        prevSlide.style.transform = 'translateX(0)';
-        prevSlide.style.transition = 'transform 0.4s ease';
-        next_btn.disabled = true;
-        prev_btn.disabled = true;
-        mask.style.display = "block";
-        setTimeout(() => {
-            prevSlide.style.transition = 'none';
-            prevSlide.style.transform = 'translateX(-100%)';
-            next_btn.disabled = false;
-            prev_btn.disabled = false;
-            mask.style.display = "none";
-        }, 400);
-    }
-
-    let autoPlayer = null;
-
-    function startAutoPlay() {
-        clearTimeout(autoPlayer);
-        autoPlayer = setTimeout(() => {
-            slideNext();
-            imgSetting()
-            startAutoPlay();
-            SlideNumberPlusOne()
-            renewActiveDot()
-            disabledAddDots()
-            setTimeout(() => {
-                currentImgSetting()
-            }, 400);
-        }, 5000);
-    };
-
-    startAutoPlay();
-
-    const swiper_pagination = document.getElementsByClassName('swiper__pagination')[0];
-    const swiper_dot = document.createElement('button');
-    swiper_dot.className = 'swiper__dot'
-    swiper_pagination.appendChild(swiper_dot)
-    swiper_pagination.innerHTML = slides.map(p => `
-            <button class="swiper__dot" id="swiper__dot__${p.id}"></button>
-        `).join('');
-
-    const swiper_dots = document.getElementsByClassName('swiper__dot');
-
-    function renewActiveDot() {
-        for (let i = 0; i < slides.length; i++) {
-            swiper_dots[i].classList.remove('swiper__dot--active')
-        }
-        swiper_dots[currentSlideNumber].classList.add('swiper__dot--active')
-    }
-
-    function disabledAddDots() {
-        for (let i = 0; i < slides.length; i++) {
-            swiper_dots[i].disabled = true
-        }
-        setTimeout(() => {
-            for (let i = 0; i < slides.length; i++) {
-                swiper_dots[i].disabled = false
-                swiper_dots[currentSlideNumber].disabled = true
-            }
-        }, 400);
-    }
-    renewActiveDot()
-
-    for (let i = 0; i < slides.length; i++) {
-        swiper_dots[i].addEventListener('click', () => {
-            let len = slides.length
-            // currentSlideNumber = i
-            // prevSlideNumber = (i - 1 + len) % len
-            nextSlideNumber = i
-            imgSetting()
-            slideNext()
-            startAutoPlay()
-            currentSlideNumber = i
-            prevSlideNumber = (i - 1 + len) % len
-            nextSlideNumber = (i + 1) % len
-            renewActiveDot()
-            disabledAddDots()
-            for (let i = 0; i < slides.length; i++) {
-                swiper_dots[i].classList.remove('swiper__dot--active')
-            }
-            setTimeout(() => {
-                currentImgSetting()
-                console.log('改圖')
-            }, 400);
-        }
-        )
-    }
-});
+  document.querySelectorAll('.swiper--hero .swiper__btn')
+  .forEach(btn => {
+    btn.addEventListener('touchend', e => {
+      e.preventDefault()
+    }, { passive: false })
+  })
+})

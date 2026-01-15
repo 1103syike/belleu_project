@@ -39,7 +39,10 @@
     cursor: pointer;
     border: none;
     background: none;
+    touch-action: manipulation;
+    user-select: none;
 }
+
 
 .swiper--hero .swiper__btn:hover {
     color: #4B4237;
@@ -63,6 +66,9 @@
 }
 
 .swiper--hero .swiper__pagination {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -93,6 +99,6 @@
 
     .swiper__img {
         height: 30vh;
-        object-fit:cover;
+        object-fit: cover;
     }
 }

@@ -3,25 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0 ,user-scalable=no, maximum-scale=1, minimum-scale=1">
     <title>商品介頁</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Noto+Sans+TC&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/pages/product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../js/components/header.js"></script>
-    <script src="/js/components/footer.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/pages/product.css">
     <script src="../js/pages/product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="../js/pages/product/mobile__gallery.js"></script>
 
+    <style>
+
+    </style>
 </head>
 
-<body data-header="solid">
+<body data-header="solid" style="width: 100%;overflow-x: hidden;">
     <section class="header-block"></section>
     <section class="product">
-        <aside class="product__gallery">
+        <aside class="product__gallery" style="display: none;">
             <img class="product__image" alt="">
             <div class="product__carousel">
                 <img class="product__item" src="../image/products/product-1(red).png" alt="">
@@ -31,7 +37,64 @@
             </div>
             <button class="gallery__button gallery__button--next">▶</button>
             <button class="gallery__button gallery__button--prev">◀</button>
+
+
         </aside>
+
+        <aside class="mobile-gallery">
+
+            <!-- 主圖 -->
+            <div class="swiper mySwiper2 mobile-gallery__main">
+                <div class="swiper-wrapper mobile-gallery__wrapper">
+                    <div class="swiper-slide mobile-gallery__slide">
+                        <img class="mobile-gallery__image" src="../image/products/product-1(blue).png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__image" src="../image/products/product-1(blue).png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__image" src="../image/products/product-1(blue).png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__image" src="../image/products/product-1(blue).png">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__image" src="../image/products/product-1(blue).png">
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev mobile-gallery__btn mobile-gallery__btn--prev"></div>
+                <div class="swiper-button-next mobile-gallery__btn mobile-gallery__btn--next"></div>
+            </div>
+
+            <!-- 縮圖 -->
+            <div class="swiper mySwiper mobile-gallery__thumbs">
+                <div class="swiper-wrapper mobile-gallery-thumbs__wrapper">
+                    <div class="swiper-slide mobile-gallery-thumbs__slide">
+                        <img class="mobile-gallery__thumb" src="https://swiperjs.com/demos/images/nature-1.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__thumb" src="https://swiperjs.com/demos/images/nature-2.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__thumb" src="https://swiperjs.com/demos/images/nature-3.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__thumb" src="https://swiperjs.com/demos/images/nature-4.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__thumb" src="https://swiperjs.com/demos/images/nature-5.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="mobile-gallery__thumb" src="https://swiperjs.com/demos/images/nature-6.jpg">
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+
+
         <aside class="product__info">
             <button class="product__btn">♡</button>
 

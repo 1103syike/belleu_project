@@ -1,0 +1,130 @@
+.mobile-gallery {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    box-sizing: border-box;
+    width: 45vw;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    position: fixed;
+    z-index: 2;
+}
+
+.mobile-gallery__main {
+    width: 45vw;
+}
+
+.mobile-gallery__wrapper {
+    gap: 0;
+}
+
+.mobile-gallery__image {
+    box-sizing: border-box;
+    width: 45vw;
+    height: calc(100vh - 80px);
+    object-fit: cover;
+    user-select: none;
+}
+
+
+.mobile-gallery__thumbs {
+    display: none;
+}
+
+@media screen and (max-width: 1600px) {
+    .mobile-gallery__main {
+        overflow: hidden;
+        height: calc(100vh - (45vw / 4) - 80px);
+    }
+
+    .mobile-gallery__image {
+        width: 45vw;
+        height: calc(100vh - (45vw / 4) - 80px);
+        object-fit: cover;
+        user-select: none;
+    }
+
+    .mobile-gallery__thumbs {
+        width: 45vw;
+        display: block;
+    }
+
+    .mobile-gallery-thumbs__slide {
+        width: calc(45vw / 4);
+        height: calc(45vw / 4);
+    }
+
+    .mobile-gallery__thumb {
+        width: calc(45vw / 4);
+        height: calc(45vw / 4);
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    .mobile-gallery {
+        width: 55vw;
+
+    }
+
+    .mobile-gallery__main {
+        overflow: hidden;
+        width: 55vw;
+        height: calc(100vh - (55vw / 4) - 80px);
+    }
+
+    .mobile-gallery__image {
+        width: 55vw;
+        height: calc(100vh - (55vw / 4) - 80px);
+    }
+
+    .mobile-gallery-thumbs__wrapper {
+        width: 55vw;
+    }
+
+    .mobile-gallery__thumbs {
+        width: 55vw;
+        display: block;
+    }
+
+    .mobile-gallery-thumbs__slide {
+        width: calc(55vw / 4);
+        height: calc(55vw / 4);
+    }
+
+    .mobile-gallery__thumb {
+        width: calc(55vw / 4);
+        height: calc(55vw / 4);
+    }
+
+}
+.mobile-gallery__btn{
+    color: #4B4237;
+}
+.mobile-gallery__btn:hover{
+    color: red;
+}
+@media screen and (max-width: 1060px) {
+
+    .mobile-gallery__slide,
+    .mobile-gallery__wrapper,
+    .mobile-gallery__main,
+    .mobile-gallery,
+    .mobile-gallery__image {
+        width: 100vw;
+        height: auto;
+    }
+
+    .mobile-gallery {
+        position: relative;
+        width: 100vw;
+    }
+
+    .mobile-gallery__image {
+        width: 100vw;
+
+    }
+
+    .mobile-gallery-thumbs__wrapper {
+        display: none;
+    }
+}

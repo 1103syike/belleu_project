@@ -66,8 +66,11 @@
     color: #4B4237;
 }
 
+.header .mobile-nav {
+    display: none;
+}
 
-.mobile-nav__list {
+.header .mobile-nav__list {
     box-sizing: border-box;
     height: 80px;
     align-items: center;
@@ -149,7 +152,17 @@
 
 }
 
+
+.header--solid .mobile-nav__link--logo, .header--solid .mobile-nav__hamburger{
+    color: #4B4237;
+}
+
+
+
 @media screen and (max-width: 980px) {
+    .header .mobile-nav {
+        display: block;
+    }
 
     .header .nav {
         display: none;

@@ -95,18 +95,8 @@
 
     .recommend__list {
         width: 90vw;
-    }
-    /* .recommend .product-card {
-        width: 40vw;
+        gap: 40px calc(10vw / 2);
     }
 
-    .recommend .product-card__img {
-        width: 40vw;
-    }
     
-    .recommend .product-card__mask{
-        width: 40vw;
-        height: 5px;
-        background-color: rebeccapurple;
-    } */
 }
