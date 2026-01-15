@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     header.innerHTML = `
         <nav class="nav">
             <ul class="nav__list">
-                <li class="nav__item "><a class="nav__link nav__link--logo" href="/index.html">BELLEU</a></li>
+                <li class="nav__item "><a class="nav__link nav__link--logo" href="./index.html">BELLEU</a></li>
                 <li class="nav__item "><a class="nav__link" href="">熱門商品</a></li>
                 <li class="nav__item "><a class="nav__link" href="">最新商品</a></li>
                 <li class="nav__item "><a class="nav__link" href="">買一送一</a></li>
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <ul class="mobile-nav__list">
 
                 <li class="mobile-nav__item "><a class="mobile-nav__link mobile-nav__link--logo"
-                        href="/index.html">BELLEU</a></li>
+                        href="./index.html">BELLEU</a></li>
                 <li class="mobile-nav__item ">
                     <button class="mobile-nav__hamburger">
                         <i class="fa-solid fa-bars"></i>
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <nav class="hamburger">
             <ul class="hamburger__list">
-                <li class="hamburger__item "><a class="hamburger__link" href="/index.html">首頁</a></li>
+                <li class="hamburger__item "><a class="hamburger__link" href="./index.html">首頁</a></li>
                 <li class="hamburger__item "><a class="hamburger__link" href="">熱門商品</a></li>
                 <li class="hamburger__item "><a class="hamburger__link" href="">最新商品</a></li>
                 <li class="hamburger__item "><a class="hamburger__link" href="">買一送一</a></li>

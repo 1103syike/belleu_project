@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         listEl.innerHTML = pageData.map(p => `
       <li class="product-card" data-id="${p.id}">
-        <a class="product-card__link" href="/product.html">
+        <a class="product-card__link" href="./product.html">
           <img class="product-card__img product-card__img--front" src="./image/products/product_card_img(${p.id}-2).png" alt="">
           <img class="product-card__img product-card__img--back"  src="./image/products/product_card_img(${p.id}-1).png" alt="">
           <div class="product-card__mask"></div>
